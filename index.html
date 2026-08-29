@@ -237,11 +237,11 @@ a{color:inherit}
 
 /* ---------- gap between rides ---------- */
 .gap{
-  display:flex; align-items:center; gap:9px; margin:8px 0 0; padding:8px 12px 8px 20px;
+  display:flex; align-items:center; flex-wrap:wrap; gap:4px 9px; margin:8px 0 0; padding:8px 12px 8px 20px;
   font-size:.85rem; font-weight:700; color:var(--ink2);
 }
 .gap svg{flex:none; width:19px; height:19px; color:var(--muted)}
-.gap b{font-family:"Dela Gothic One",sans-serif; font-weight:400; color:var(--ink); font-variant-numeric:tabular-nums}
+.gap b{font-family:"Dela Gothic One",sans-serif; font-weight:400; color:var(--ink); font-variant-numeric:tabular-nums; white-space:nowrap}
 .gap.tight{
   background:color-mix(in srgb,var(--red) 13%, transparent); color:var(--red);
   border-radius:10px; border:1px dashed var(--red); margin-top:10px;

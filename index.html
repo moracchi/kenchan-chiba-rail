@@ -204,7 +204,7 @@ a{color:inherit}
 .stop{display:grid; grid-template-columns:4.7rem 1.6rem 1fr; align-items:center; min-height:2.2em}
 .stop time{
   font-family:"Dela Gothic One",sans-serif; font-size:1.12rem; color:var(--ink);
-  font-variant-numeric:tabular-nums; letter-spacing:-.02em;
+  font-variant-numeric:tabular-nums; letter-spacing:-.02em; white-space:nowrap;
 }
 .stop time sub{font-family:"Zen Maru Gothic",sans-serif; font-size:.6rem; vertical-align:baseline; color:var(--muted); margin-left:1px}
 .dot{
@@ -237,10 +237,10 @@ a{color:inherit}
 
 /* ---------- gap between rides ---------- */
 .gap{
-  display:flex; align-items:center; flex-wrap:wrap; gap:4px 9px; margin:8px 0 0; padding:8px 12px 8px 20px;
-  font-size:.85rem; font-weight:700; color:var(--ink2);
+  position:relative; margin:8px 0 0; padding:8px 12px 8px 46px;
+  font-size:.85rem; font-weight:700; color:var(--ink2); line-height:1.7;
 }
-.gap svg{flex:none; width:19px; height:19px; color:var(--muted)}
+.gap svg{position:absolute; left:20px; top:10px; width:19px; height:19px; color:var(--muted)}
 .gap b{font-family:"Dela Gothic One",sans-serif; font-weight:400; color:var(--ink); font-variant-numeric:tabular-nums; white-space:nowrap}
 .gap.tight{
   background:color-mix(in srgb,var(--red) 13%, transparent); color:var(--red);
@@ -258,8 +258,8 @@ a{color:inherit}
   margin-top:16px; background:var(--surface); border:1px solid var(--line);
   border-radius:var(--r); padding:15px 15px 16px; box-shadow:var(--shadow);
 }
-.card h3{font-size:1.05rem; margin-bottom:.5rem; display:flex; align-items:center; gap:8px}
-.card h3::before{content:""; width:5px; height:1.1em; background:var(--nana); border-radius:3px; flex:none}
+.card h3{font-size:1.05rem; margin-bottom:.5rem; position:relative; padding-left:13px}
+.card h3::before{content:""; position:absolute; left:0; top:.18em; width:5px; height:1.1em; background:var(--nana); border-radius:3px}
 .card p{font-size:.88rem; color:var(--ink2)}
 .card p + p{margin-top:.6rem}
 .card.kid{background:var(--green); border-color:transparent; color:#F3F6EF}
@@ -269,21 +269,21 @@ a{color:inherit}
 .card.kid li::marker{font-family:"Dela Gothic One",sans-serif; color:var(--nana)}
 .checks{list-style:none; margin:.4rem 0 0; padding:0; display:grid; gap:8px}
 .checks li{
-  display:grid; grid-template-columns:20px 1fr; gap:9px; align-items:start;
+  position:relative; padding-left:29px;
   font-size:.86rem; color:var(--ink2); line-height:1.6;
 }
 .checks li::before{
-  content:""; margin-top:.35em; width:16px; height:16px; border-radius:5px;
+  content:""; position:absolute; left:0; top:.4em; width:16px; height:16px; border-radius:5px;
   border:2px solid var(--nana-deep); background:color-mix(in srgb,var(--nana) 30%,transparent);
 }
 .checks b{color:var(--ink)}
 details{margin-top:16px; background:var(--surface); border:1px solid var(--line); border-radius:var(--r); box-shadow:var(--shadow)}
 summary{
-  cursor:pointer; padding:13px 15px; font-weight:700; font-size:.92rem;
-  list-style:none; display:flex; align-items:center; gap:8px;
+  cursor:pointer; padding:13px 36px 13px 15px; font-weight:700; font-size:.92rem;
+  list-style:none; position:relative;
 }
 summary::-webkit-details-marker{display:none}
-summary::after{content:"＋"; margin-left:auto; color:var(--muted); font-weight:700}
+summary::after{content:"＋"; position:absolute; right:15px; top:13px; color:var(--muted); font-weight:700}
 details[open] summary::after{content:"−"}
 details .body{padding:0 15px 15px; font-size:.87rem; color:var(--ink2)}
 details .body p+p{margin-top:.65rem}

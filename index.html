@@ -3,877 +3,856 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description" content="サンキューちばフリーパスで千葉の鉄道を2日間乗り倒す行程表。1日目は小湊鉄道とトロッコ、2日目は銚子ループ。">
-  <meta name="theme-color" content="#F3F6EF" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0D1411" media="(prefers-color-scheme: dark)">
+  <meta name="description" content="サンキューちばフリーパスで千葉のローカル線をめぐる2日間の行程表。1日目は小湊鉄道とトロッコ、2日目は東海神から銚子ループ。">
+  <meta name="theme-color" content="#FBF7EE" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#101A1F" media="(prefers-color-scheme: dark)">
   <meta name="color-scheme" content="light dark">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#128691;</text></svg>">
   <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#128691;</text></svg>">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <title>けんちゃんサンキュー鉄道旅</title>
+  <title>けんちゃんサンキューフリーパス鉄道旅行</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=RocknRoll+One&family=Zen+Maru+Gothic:wght@400;500;700;900&family=Oswald:wght@500;600&display=swap">
 </head>
 <body>
 
-
 <style>
-/* ---------- tokens ---------- */
+/* ============ tokens ============ */
 :root{
-  --paper:#F3F6EF; --surface:#FFFFFF; --surface2:#E9EFE2; --sunk:#DCE5D3;
-  --ink:#15211C; --ink2:#3C4E45; --muted:#6B7D72; --line:#D6E0CE;
-  --nana:#FFC61E; --nana-deep:#B98600; --green:#1C5B47; --blue:#0F7FBF;
-  --red:#C93A22; --gold:#9C7215;
-  --chip-fg:#FFFFFF;
-  --l-jr:#0F7FBF; --l-kom:#D2551A; --l-tor:#2C7048; --l-toyo:#0090B8;
-  --l-kei:#1E4E9E; --l-nar:#0E8E56; --l-cho:#C42F2C; --l-sob:#B58A00;
-  --shadow:0 1px 0 rgba(21,33,28,.06), 0 6px 18px -10px rgba(21,33,28,.35);
-  --r:14px;
+  --paper:#FBF7EE;
+  --paper2:#F3EDDF;
+  --card:#FFFFFF;
+  --ink:#16303A;
+  --sumi:#5C6F76;
+  --hair:#E3DCCA;
+  --red:#DC3A2A;
+  --gold:#E8930E;
+  --cobalt:#1D63AC;
+  --pine:#1E7A52;
+  --warn-bg:#FFF3D6;
+  --warn-ink:#8A5300;
+  --done-ink:#93A3A8;
+  --shadow:0 2px 0 #E7E0CE, 0 10px 22px rgba(22,48,58,.07);
+  --shadow-sm:0 1px 0 #E7E0CE, 0 4px 10px rgba(22,48,58,.06);
+  /* line colours */
+  --l-jr:#1D63AC;
+  --l-narita:#1E8A6E;
+  --l-kominato:#E8930E;
+  --l-toyo:#E2551F;
+  --l-keisei:#3A4BAE;
+  --l-choshi:#D2382A;
+  --l-walk:#93A3A8;
+  /* illustration */
+  --sky:#CFE7F2;
+  --cloud:#FFFFFF;
+  --hill:#63A96F;
+  --hill2:#3B8258;
+  --sea:#2E8BC0;
+  --sand:#E9DCB0;
+  --glass:#BEDCE9;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --paper:#0D1411; --surface:#16211C; --surface2:#1E2C25; --sunk:#111A16;
-    --ink:#E9F1EA; --ink2:#BACABF; --muted:#8FA396; --line:#2B3A32;
-    --nana:#FFD24D; --nana-deep:#FFD98A; --green:#74D3AC; --blue:#5CB8EE;
-    --red:#FF8A72; --gold:#E7BE5A;
-    --chip-fg:#0D1411;
-    --l-jr:#59B5EC; --l-kom:#FF8F52; --l-tor:#5FCB92; --l-toyo:#40C7E8;
-    --l-kei:#7BA6EE; --l-nar:#54D49E; --l-cho:#FF837B; --l-sob:#F0C752;
-    --shadow:0 1px 0 rgba(0,0,0,.4), 0 8px 20px -12px rgba(0,0,0,.8);
+    --paper:#101A1F;
+    --paper2:#16242A;
+    --card:#1A282F;
+    --ink:#EAF2F1;
+    --sumi:#9FB3B8;
+    --hair:#2B3D45;
+    --red:#FF6E5B;
+    --gold:#FFC34D;
+    --cobalt:#71ACEA;
+    --pine:#54C592;
+    --warn-bg:#3A2E12;
+    --warn-ink:#FFD37A;
+    --done-ink:#63787F;
+    --shadow:0 2px 0 #0A1216, 0 10px 22px rgba(0,0,0,.4);
+    --shadow-sm:0 1px 0 #0A1216, 0 4px 10px rgba(0,0,0,.3);
+    --l-jr:#6BA8E8;
+    --l-narita:#48BE9C;
+    --l-kominato:#F5B33F;
+    --l-toyo:#FF8358;
+    --l-keisei:#8A93E8;
+    --l-choshi:#FF6E5B;
+    --l-walk:#6E838A;
+    --sky:#1C303B;
+    --cloud:#33474F;
+    --hill:#2F6B4A;
+    --hill2:#215239;
+    --sea:#1D5E85;
+    --sand:#5C5136;
+    --glass:#2A4C5B;
   }
 }
 :root[data-theme="dark"]{
-  --paper:#0D1411; --surface:#16211C; --surface2:#1E2C25; --sunk:#111A16;
-  --ink:#E9F1EA; --ink2:#BACABF; --muted:#8FA396; --line:#2B3A32;
-  --nana:#FFD24D; --nana-deep:#FFD98A; --green:#74D3AC; --blue:#5CB8EE;
-  --red:#FF8A72; --gold:#E7BE5A;
-  --chip-fg:#0D1411;
-  --l-jr:#59B5EC; --l-kom:#FF8F52; --l-tor:#5FCB92; --l-toyo:#40C7E8;
-  --l-kei:#7BA6EE; --l-nar:#54D49E; --l-cho:#FF837B; --l-sob:#F0C752;
-  --shadow:0 1px 0 rgba(0,0,0,.4), 0 8px 20px -12px rgba(0,0,0,.8);
+  --paper:#101A1F;
+  --paper2:#16242A;
+  --card:#1A282F;
+  --ink:#EAF2F1;
+  --sumi:#9FB3B8;
+  --hair:#2B3D45;
+  --red:#FF6E5B;
+  --gold:#FFC34D;
+  --cobalt:#71ACEA;
+  --pine:#54C592;
+  --warn-bg:#3A2E12;
+  --warn-ink:#FFD37A;
+  --done-ink:#63787F;
+  --shadow:0 2px 0 #0A1216, 0 10px 22px rgba(0,0,0,.4);
+  --shadow-sm:0 1px 0 #0A1216, 0 4px 10px rgba(0,0,0,.3);
+  --l-jr:#6BA8E8;
+  --l-narita:#48BE9C;
+  --l-kominato:#F5B33F;
+  --l-toyo:#FF8358;
+  --l-keisei:#8A93E8;
+  --l-choshi:#FF6E5B;
+  --l-walk:#6E838A;
+  --sky:#1C303B;
+  --cloud:#33474F;
+  --hill:#2F6B4A;
+  --hill2:#215239;
+  --sea:#1D5E85;
+  --sand:#5C5136;
+  --glass:#2A4C5B;
 }
 
-/* ---------- base ---------- */
+/* ============ base ============ */
 *{box-sizing:border-box}
 body{
-  margin:0; background:var(--paper); color:var(--ink);
-  font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Yu Gothic",system-ui,sans-serif;
-  font-weight:500; font-size:16px; line-height:1.7;
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN","ヒラギノ丸ゴ ProN W4","Yu Gothic","Meiryo",sans-serif;
+  font-weight:500;
+  line-height:1.7;
   -webkit-text-size-adjust:100%;
 }
-.wrap{max-width:560px; margin:0 auto; padding:0 14px 72px}
-h1,h2,h3{font-family:"Dela Gothic One","Zen Maru Gothic",system-ui,sans-serif; font-weight:400; line-height:1.35; text-wrap:balance; margin:0}
+.wrap{max-width:560px;margin:0 auto;padding:0 14px 64px}
+h1,h2,h3{font-family:"RocknRoll One","Zen Maru Gothic",sans-serif;font-weight:400;text-wrap:balance;margin:0;line-height:1.35}
 p{margin:0}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--nana); outline-offset:2px; border-radius:6px}
-@media (prefers-reduced-motion:reduce){*{animation:none !important; transition:none !important; scroll-behavior:auto !important}}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:6px}
+.num{font-family:"Oswald","Zen Maru Gothic",sans-serif;font-variant-numeric:tabular-nums;letter-spacing:.01em}
+.eyebrow{font-size:11px;letter-spacing:.14em;color:var(--sumi);font-weight:700}
 
-/* ---------- ticket hero ---------- */
+/* ============ hero ticket ============ */
 .ticket{
-  position:relative; margin:16px 0 0; padding:22px 18px 18px;
-  background:var(--surface); border:2px solid var(--ink); border-radius:var(--r);
-  box-shadow:var(--shadow); overflow:hidden;
+  position:relative;
+  margin:16px 0 14px;
+  background:var(--card);
+  border-radius:16px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
 }
-.ticket::before{
-  content:""; position:absolute; inset:0 0 auto; height:8px;
-  background:repeating-linear-gradient(90deg,var(--nana) 0 14px,var(--green) 14px 28px);
+.ticket-top{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding:9px 14px;
+  background:var(--red);
+  color:#fff;
 }
-.eyebrow{
-  font-size:.72rem; letter-spacing:.18em; font-weight:700; color:var(--ink2);
-  display:flex; align-items:center; gap:8px; margin-top:6px;
-}
-.eyebrow::after{content:""; flex:1; height:1px; background:var(--line)}
-.ticket h1{font-size:clamp(1.5rem,7.4vw,2rem); margin:.4rem 0 .1rem; letter-spacing:-.01em}
-.ticket h1 .hl{
-  background:linear-gradient(transparent 62%,var(--nana) 62% 94%,transparent 94%);
-  padding:0 2px;
-}
-.sub{color:var(--ink2); font-size:.92rem; margin-top:.45rem}
-.facts{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:16px}
-.fact{background:var(--surface2); border-radius:10px; padding:9px 8px; text-align:center}
-.fact b{display:block; font-family:"Dela Gothic One",sans-serif; font-weight:400; font-size:1.25rem; color:var(--green); line-height:1.2}
-.fact span{display:block; font-size:.68rem; color:var(--muted); letter-spacing:.04em}
+.ticket-top .brand{font-family:"RocknRoll One",sans-serif;font-size:13px;letter-spacing:.04em}
+.ticket-top .fare{font-size:11px;font-weight:700;background:rgba(255,255,255,.22);padding:2px 8px;border-radius:99px}
+.ticket-body{padding:16px 16px 12px}
+.ticket-body h1{font-size:27px;letter-spacing:-.01em}
+.ticket-body h1 .accent{color:var(--red)}
+.ticket-sub{margin-top:6px;font-size:13px;color:var(--sumi)}
 .perf{
-  height:14px; margin:0 -18px -18px;
-  background:radial-gradient(circle at 7px 7px, var(--paper) 6px, transparent 6.5px) 0 0/14px 14px repeat-x;
-  border-top:2px dashed var(--line);
+  position:relative;height:0;border-top:2px dashed var(--hair);margin:12px 0 0;
 }
-
-/* ---------- sticky bar ---------- */
-.bar{
-  position:sticky; top:0; z-index:20; margin:14px -14px 0; padding:8px 14px;
+.perf::before,.perf::after{
+  content:"";position:absolute;top:-11px;width:20px;height:20px;border-radius:50%;
   background:var(--paper);
-  background:color-mix(in srgb,var(--paper) 88%, transparent);
-  backdrop-filter:blur(10px); border-bottom:1px solid var(--line);
-  display:flex; align-items:center; gap:8px;
 }
-.tabs{display:flex; gap:6px; background:var(--sunk); padding:4px; border-radius:11px}
-.tab{
-  font:inherit; font-weight:700; font-size:.87rem; border:0; cursor:pointer;
-  padding:7px 13px; border-radius:8px; background:transparent; color:var(--ink2);
+.perf::before{left:-11px}
+.perf::after{right:-11px}
+.ticket-foot{
+  display:flex;gap:8px;flex-wrap:wrap;padding:12px 16px 14px;
 }
-.tab[aria-selected="true"]{background:var(--ink); color:var(--paper)}
-.now{
-  margin-left:auto; display:flex; align-items:center; gap:7px;
-  font-family:"Dela Gothic One",sans-serif; font-size:.95rem; color:var(--ink2);
-  font-variant-numeric:tabular-nums;
+.stub{
+  font-size:11.5px;font-weight:700;padding:4px 10px;border-radius:99px;
+  background:var(--paper2);color:var(--sumi);
 }
-.jump{
-  font:inherit; font-weight:700; font-size:.78rem; cursor:pointer;
-  border:2px solid var(--ink); background:var(--nana); color:#15211C;
-  padding:5px 10px; border-radius:9px; white-space:nowrap;
-}
-.jump:active{transform:translateY(1px)}
+.hero-art{display:block;width:100%;height:auto;background:var(--sky)}
 
-/* ---------- day head ---------- */
-.day[hidden]{display:none}
-.dayhead{margin-top:18px}
-.daytag{
-  display:inline-flex; align-items:baseline; gap:8px; background:var(--ink); color:var(--paper);
-  padding:5px 12px 6px; border-radius:999px; font-size:.76rem; font-weight:700; letter-spacing:.08em;
+/* ============ date picker ============ */
+.datebox{
+  background:var(--card);border-radius:14px;padding:13px 14px 14px;box-shadow:var(--shadow-sm);
+  margin-bottom:14px;
 }
-.daytag b{font-family:"Dela Gothic One",sans-serif; font-weight:400; font-size:1.05rem}
-.dayhead h2{font-size:clamp(1.35rem,6.2vw,1.7rem); margin:.5rem 0 .3rem}
-.dayhead p{color:var(--ink2); font-size:.92rem}
-
-/* illustration panel */
-.art{
-  margin:12px 0 0; border-radius:var(--r); overflow:hidden;
-  border:2px solid var(--ink); box-shadow:var(--shadow); line-height:0;
-}
-.art svg{width:100%; height:auto; display:block}
-.cap{
-  font-size:.74rem; color:var(--muted); line-height:1.5;
-  margin:6px 2px 0; letter-spacing:.02em;
-}
-
-/* meta strip */
-.strip{
-  display:flex; flex-wrap:wrap; gap:6px; margin-top:12px;
-}
-.pillinfo{
-  font-size:.76rem; font-weight:700; padding:5px 10px; border-radius:999px;
-  background:var(--surface2); color:var(--ink2); border:1px solid var(--line);
-}
-.pillinfo.warn{background:var(--red); color:var(--chip-fg); border-color:transparent}
-.pillinfo.star{background:var(--nana); color:#15211C; border-color:transparent}
-
-/* ---------- progress ---------- */
-.prog{
-  display:flex; align-items:center; gap:10px; margin-top:14px;
-  background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:10px 12px;
-}
-.prog .n{font-family:"Dela Gothic One",sans-serif; font-size:1.05rem; color:var(--green); font-variant-numeric:tabular-nums}
-.prog .track{flex:1; height:9px; background:var(--sunk); border-radius:99px; overflow:hidden}
-.prog .fill{height:100%; width:0; background:var(--nana); border-radius:99px; transition:width .35s ease}
-.prog button{
-  font:inherit; font-size:.74rem; font-weight:700; cursor:pointer; color:var(--muted);
-  background:none; border:1px solid var(--line); border-radius:8px; padding:3px 8px;
-}
-
-/* ---------- segment card ---------- */
-.seg{
-  position:relative; margin-top:10px; background:var(--surface);
-  border:1px solid var(--line); border-left:6px solid var(--l,var(--line));
-  border-radius:var(--r); padding:12px 12px 12px 14px; box-shadow:var(--shadow);
-}
-.seg.flash{animation:flash 1.5s ease}
-@keyframes flash{0%,100%{box-shadow:var(--shadow)}20%,60%{box-shadow:0 0 0 4px var(--nana)}}
-.seghead{display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:9px}
+.datebox h2{font-size:15px;display:flex;align-items:center;gap:7px}
+.chips{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}
 .chip{
-  font-size:.76rem; font-weight:700; letter-spacing:.02em; padding:4px 10px; border-radius:8px;
-  background:var(--l); color:var(--chip-fg); white-space:nowrap;
+  font-size:12.5px;font-weight:700;padding:7px 11px;border-radius:99px;
+  background:var(--paper2);color:var(--sumi);border:2px solid transparent;
+  transition:transform .12s ease;
 }
-.dur{font-size:.76rem; color:var(--muted); font-weight:700; font-variant-numeric:tabular-nums}
-.stamp{
-  margin-left:auto; font:inherit; font-size:.74rem; font-weight:700; cursor:pointer;
-  border:2px solid var(--line); background:var(--surface); color:var(--muted);
-  border-radius:999px; padding:3px 11px; white-space:nowrap;
-}
-.stamp::before{content:"のった？"}
-.seg.done{border-color:var(--line); background:var(--surface2); opacity:.72}
-.seg.done .stamp{border-color:var(--green); color:var(--green); background:transparent}
-.seg.done .stamp::before{content:"✓ のった！"}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.chip:active{transform:scale(.96)}
+.datebox .fine{margin-top:10px;font-size:11.5px;line-height:1.6;color:var(--sumi)}
 
-.stops{list-style:none; margin:0; padding:0; position:relative}
-.stops::before{
-  content:""; position:absolute; left:calc(4.7rem + 0.55rem - 2px); top:1.1em; bottom:1.1em;
-  width:4px; background:var(--l); border-radius:4px;
+/* ============ tabs ============ */
+.tabs{
+  position:sticky;top:0;z-index:20;
+  display:flex;gap:6px;padding:8px 0;
+  background:linear-gradient(var(--paper) 72%, rgba(0,0,0,0));
 }
-.stop{display:grid; grid-template-columns:4.7rem 1.6rem 1fr; align-items:center; min-height:2.2em}
-.stop time{
-  font-family:"Dela Gothic One",sans-serif; font-size:1.12rem; color:var(--ink);
-  font-variant-numeric:tabular-nums; letter-spacing:-.02em; white-space:nowrap;
+.tab{
+  flex:1;text-align:center;font-family:"RocknRoll One",sans-serif;font-size:14px;
+  padding:10px 4px;border-radius:11px;background:var(--card);color:var(--sumi);
+  box-shadow:var(--shadow-sm);
 }
-.stop time sub{font-family:"Zen Maru Gothic",sans-serif; font-size:.6rem; vertical-align:baseline; color:var(--muted); margin-left:1px}
-.dot{
-  justify-self:center; width:15px; height:15px; border-radius:50%;
-  background:var(--surface); border:4px solid var(--l); position:relative; z-index:1;
-}
-.stn{font-size:1.12rem; font-weight:700; letter-spacing:.01em}
-.stn em{font-style:normal; font-size:.74rem; font-weight:700; color:var(--muted); margin-left:6px; letter-spacing:.06em}
-.note{
-  font-size:.83rem; color:var(--ink2); margin-top:9px; padding-top:9px;
-  border-top:1px dashed var(--line); line-height:1.65;
-}
-.via{
-  font-size:.76rem; color:var(--muted); margin-top:7px; letter-spacing:.02em;
-  display:flex; flex-wrap:wrap; gap:4px 6px; align-items:center;
-}
-.via span{background:var(--sunk); border-radius:6px; padding:1px 7px}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--paper);box-shadow:none}
+.tab small{display:block;font-size:10px;font-family:"Zen Maru Gothic",sans-serif;opacity:.75;letter-spacing:.02em}
 
-/* highlight segment */
-.seg.hero{
-  background:linear-gradient(150deg,var(--surface) 0%,var(--surface2) 100%);
-  border:2px solid var(--l); border-left-width:6px;
+/* ============ day header ============ */
+.dayhead{
+  position:relative;margin:6px 0 14px;border-radius:16px;overflow:hidden;
+  background:var(--card);box-shadow:var(--shadow);
 }
-.seg.hero .seghead .chip{box-shadow:0 0 0 3px color-mix(in srgb,var(--l) 22%, transparent)}
-.badge{
-  position:absolute; top:-11px; right:12px; background:var(--nana); color:#15211C;
-  font-size:.7rem; font-weight:700; letter-spacing:.08em; padding:3px 10px; border-radius:999px;
-  border:2px solid var(--ink);
+.dayhead-txt{padding:13px 15px 15px}
+.dayhead .kicker{
+  display:inline-block;font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.1em;
+  color:#fff;background:var(--ink);padding:2px 9px;border-radius:99px;
+}
+.dayhead h2{font-size:21px;margin-top:7px}
+.dayhead .date{margin-top:3px;font-size:13px;font-weight:700;color:var(--red)}
+.dayhead .lead{margin-top:7px;font-size:12.5px;color:var(--sumi);line-height:1.65}
+.routeline{display:flex;flex-wrap:wrap;gap:4px;margin-top:10px;align-items:center}
+.routeline span{font-size:10.5px;font-weight:700;padding:2.5px 7px;border-radius:6px;background:var(--paper2);color:var(--sumi)}
+.routeline b{color:var(--sumi);font-size:10px;opacity:.6}
+
+/* ============ timeline ============ */
+.tl{list-style:none;margin:0;padding:0}
+.tl li{position:relative;padding-left:38px;min-height:22px}
+.tl li::before{
+  content:"";position:absolute;left:14px;top:0;bottom:0;width:4px;
+  background:var(--hair);border-radius:2px;
+}
+.stop{display:flex;align-items:baseline;gap:9px;padding-top:5px;padding-bottom:5px;flex-wrap:wrap}
+.stop::after{
+  content:"";position:absolute;left:8px;top:12px;width:16px;height:16px;border-radius:50%;
+  background:var(--card);border:4px solid var(--ink);
+}
+.stop.big::after{border-color:var(--red)}
+.stop .t{font-family:"Oswald",sans-serif;font-variant-numeric:tabular-nums;font-size:23px;line-height:1.1;min-width:62px}
+.stop .s{font-family:"RocknRoll One",sans-serif;font-size:17px}
+.stop .s em{font-style:normal;font-size:11.5px;color:var(--sumi);margin-left:2px;font-family:"Zen Maru Gothic",sans-serif}
+.tag{
+  font-size:11px;font-weight:700;padding:2px 8px;border-radius:99px;
+  background:var(--paper2);color:var(--sumi);white-space:nowrap;
+}
+.tag.hot{background:var(--red);color:#fff}
+.tag.go{background:var(--pine);color:#fff}
+
+/* ride rows */
+.ride,.stay{padding-top:2px;padding-bottom:2px}
+.ride::before{background:var(--lc,var(--hair));width:8px;left:12px;border-radius:4px}
+.ride[data-line="torokko"]::before{
+  background:repeating-linear-gradient(-45deg,var(--red) 0 6px,var(--pine) 6px 12px);
+}
+.stay::before{background:none;border-left:4px dotted var(--hair);left:16px;width:0}
+.rowbtn{
+  display:flex;align-items:center;gap:9px;width:100%;text-align:left;
+  padding:9px 11px;border-radius:12px;background:var(--card);box-shadow:var(--shadow-sm);
+  margin:4px 0;
+}
+.rowbtn .ic{flex:none;width:26px;height:26px;display:grid;place-items:center;border-radius:8px;background:var(--paper2)}
+.rowbtn .ic svg{width:16px;height:16px;display:block}
+.rowbtn .mid{flex:1;min-width:0}
+.rowbtn .ln{display:block;font-size:13.5px;font-weight:700;line-height:1.4}
+.rowbtn .sub{display:block;font-size:11px;color:var(--sumi);line-height:1.5}
+.rowbtn .box{
+  flex:none;width:24px;height:24px;border-radius:8px;border:2.5px solid var(--hair);
+  display:grid;place-items:center;
+}
+.rowbtn .box svg{width:14px;height:14px;opacity:0;transform:scale(.6);transition:opacity .15s,transform .15s}
+.ride .ln{color:var(--lc,var(--ink))}
+.rowbtn[aria-pressed="true"]{background:var(--paper2);box-shadow:none}
+.rowbtn[aria-pressed="true"] .ln,.rowbtn[aria-pressed="true"] .sub{color:var(--done-ink);text-decoration:line-through}
+.rowbtn[aria-pressed="true"] .box{background:var(--pine);border-color:var(--pine)}
+.rowbtn[aria-pressed="true"] .box svg{opacity:1;transform:scale(1)}
+.stay .rowbtn{background:transparent;box-shadow:none;border:2px dashed var(--hair)}
+.stay .rowbtn[aria-pressed="true"]{background:var(--paper2);border-style:solid}
+
+/* next-up marker */
+.stop.is-next .t{color:var(--red)}
+.stop.is-next::after{border-color:var(--red);box-shadow:0 0 0 5px color-mix(in srgb, var(--red) 22%, transparent)}
+.nowflag{
+  font-family:"RocknRoll One",sans-serif;font-size:10.5px;color:#fff;background:var(--red);
+  padding:1px 8px;border-radius:99px;
 }
 
-/* ---------- gap between rides ---------- */
-.gap{
-  position:relative; margin:8px 0 0; padding:8px 12px 8px 46px;
-  font-size:.85rem; font-weight:700; color:var(--ink2); line-height:1.7;
-}
-.gap svg{position:absolute; left:20px; top:10px; width:19px; height:19px; color:var(--muted)}
-.gap b{font-family:"Dela Gothic One",sans-serif; font-weight:400; color:var(--ink); font-variant-numeric:tabular-nums; white-space:nowrap}
-.gap.tight{
-  background:color-mix(in srgb,var(--red) 13%, transparent); color:var(--red);
-  border-radius:10px; border:1px dashed var(--red); margin-top:10px;
-}
-.gap.tight svg,.gap.tight b{color:var(--red)}
-.gap.stay{
-  background:var(--surface2); border-radius:10px; border:1px solid var(--line); margin-top:10px;
-  color:var(--green);
-}
-.gap.stay b{color:var(--green)}
-
-/* ---------- generic card ---------- */
+/* ============ cards ============ */
 .card{
-  margin-top:16px; background:var(--surface); border:1px solid var(--line);
-  border-radius:var(--r); padding:15px 15px 16px; box-shadow:var(--shadow);
+  background:var(--card);border-radius:14px;box-shadow:var(--shadow-sm);
+  padding:13px 14px;margin:14px 0;
 }
-.card h3{font-size:1.05rem; margin-bottom:.5rem; position:relative; padding-left:13px}
-.card h3::before{content:""; position:absolute; left:0; top:.18em; width:5px; height:1.1em; background:var(--nana); border-radius:3px}
-.card p{font-size:.88rem; color:var(--ink2)}
-.card p + p{margin-top:.6rem}
-.card.kid{background:var(--green); border-color:transparent; color:#F3F6EF}
-.card.kid h3,.card.kid p,.card.kid li{color:#F3F6EF}
-.card.kid h3::before{background:var(--nana)}
-.card.kid ol{margin:.6rem 0 0; padding-left:1.2em; font-size:.88rem; line-height:1.75}
-.card.kid li::marker{font-family:"Dela Gothic One",sans-serif; color:var(--nana)}
-.checks{list-style:none; margin:.4rem 0 0; padding:0; display:grid; gap:8px}
-.checks li{
-  position:relative; padding-left:29px;
-  font-size:.86rem; color:var(--ink2); line-height:1.6;
+.card h3{font-size:15px;display:flex;align-items:center;gap:7px}
+.card p{font-size:12.5px;color:var(--sumi);margin-top:7px;line-height:1.7}
+.card p strong{color:var(--ink)}
+.alert{background:var(--warn-bg);box-shadow:none;border:2px solid color-mix(in srgb, var(--warn-ink) 30%, transparent)}
+.alert h3{color:var(--warn-ink)}
+.alert p{color:var(--warn-ink);opacity:.92}
+.spot{overflow:hidden;padding:0}
+.spot .art{display:block;width:100%;height:auto;background:var(--sky)}
+.spot .in{padding:12px 14px 14px}
+.pricetag{
+  display:inline-flex;align-items:baseline;gap:4px;background:var(--red);color:#fff;
+  padding:3px 11px;border-radius:99px;font-weight:700;font-size:12px;margin-top:8px;
 }
-.checks li::before{
-  content:""; position:absolute; left:0; top:.4em; width:16px; height:16px; border-radius:5px;
-  border:2px solid var(--nana-deep); background:color-mix(in srgb,var(--nana) 30%,transparent);
-}
-.checks b{color:var(--ink)}
-details{margin-top:16px; background:var(--surface); border:1px solid var(--line); border-radius:var(--r); box-shadow:var(--shadow)}
+.pricetag b{font-family:"Oswald",sans-serif;font-size:17px}
+
+details{margin:14px 0;background:var(--card);border-radius:14px;box-shadow:var(--shadow-sm);overflow:hidden}
 summary{
-  cursor:pointer; padding:13px 36px 13px 15px; font-weight:700; font-size:.92rem;
-  list-style:none; position:relative;
+  list-style:none;cursor:pointer;padding:13px 14px;font-family:"RocknRoll One",sans-serif;
+  font-size:14.5px;display:flex;align-items:center;gap:8px;
 }
 summary::-webkit-details-marker{display:none}
-summary::after{content:"＋"; position:absolute; right:15px; top:13px; color:var(--muted); font-weight:700}
-details[open] summary::after{content:"−"}
-details .body{padding:0 15px 15px; font-size:.87rem; color:var(--ink2)}
-details .body p+p{margin-top:.65rem}
-.foot{margin-top:26px; text-align:center; font-size:.74rem; color:var(--muted); line-height:1.8}
+summary .arw{margin-left:auto;font-size:12px;color:var(--sumi);transition:transform .18s}
+details[open] summary .arw{transform:rotate(180deg)}
+.details-in{padding:0 14px 14px}
+.details-in p{font-size:12.5px;color:var(--sumi);line-height:1.7}
+.mini{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px}
+.mini li{display:flex;gap:9px;align-items:baseline;font-size:13px;padding:7px 10px;background:var(--paper2);border-radius:9px}
+.mini .t{font-family:"Oswald",sans-serif;font-variant-numeric:tabular-nums;font-size:15px;min-width:48px}
+
+.checklist{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:7px}
+.checklist li{display:flex;gap:9px;font-size:13px;line-height:1.6}
+.checklist .dot{flex:none;width:19px;height:19px;border-radius:6px;background:var(--paper2);display:grid;place-items:center;font-size:11px;margin-top:2px}
+
+.footer{margin-top:26px;text-align:center;font-size:11px;color:var(--sumi);line-height:1.8}
+.reset{margin-top:12px;font-size:11.5px;font-weight:700;color:var(--sumi);background:var(--paper2);padding:7px 14px;border-radius:99px}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation:none !important;transition:none !important}
+}
 </style>
 
-<div class="wrap">
+<main class="wrap">
 
   <!-- ============ HERO ============ -->
-  <header class="ticket">
-    <div class="eyebrow">サンキューちばフリーパス／シルバーウィーク</div>
-    <h1><span class="hl">けんちゃん</span><br>サンキュー鉄道旅</h1>
-    <p class="sub">千葉の鉄道を、2日間でしゃぶりつくす。<br>1日目は小湊鉄道とトロッコ、2日目は千葉県東部をぐるり一周。</p>
-    <div class="facts">
-      <div class="fact"><b>2</b><span>DAYS</span></div>
-      <div class="fact"><b>8</b><span>路線</span></div>
-      <div class="fact"><b>17</b><span>乗車</span></div>
+  <div class="ticket">
+    <div class="ticket-top">
+      <span class="brand">サンキューちばフリーパス</span>
+      <span class="fare">2日間 乗りほうだい</span>
     </div>
-    <div class="perf"></div>
-  </header>
 
-  <!-- ============ STICKY BAR ============ -->
-  <nav class="bar">
-    <div class="tabs" role="tablist" aria-label="日付">
-      <button class="tab" role="tab" id="tab1" aria-controls="day1" aria-selected="true">1日目</button>
-      <button class="tab" role="tab" id="tab2" aria-controls="day2" aria-selected="false">2日目</button>
+    <svg class="hero-art" viewBox="0 0 360 118" role="img" aria-label="里山を走るオレンジ色の小湊鉄道の気動車と、遠くに見える灯台のイラスト">
+      <rect width="360" height="118" fill="var(--sky)"/>
+      <circle cx="308" cy="26" r="15" fill="var(--gold)" opacity=".85"/>
+      <g fill="var(--cloud)" opacity=".9">
+        <ellipse cx="52" cy="24" rx="22" ry="10"/><ellipse cx="70" cy="21" rx="15" ry="11"/>
+        <ellipse cx="205" cy="17" rx="17" ry="8"/><ellipse cx="219" cy="15" rx="11" ry="8"/>
+      </g>
+      <path d="M0 74 Q60 40 130 68 Q190 90 250 62 Q310 36 360 66 L360 118 L0 118Z" fill="var(--hill)"/>
+      <path d="M0 90 Q80 66 160 88 Q240 108 360 82 L360 118 L0 118Z" fill="var(--hill2)"/>
+      <g fill="var(--hill2)" opacity=".85">
+        <path d="M24 74 l9 16 h-18Z"/><path d="M24 66 l7 13 h-14Z"/>
+        <path d="M292 60 l9 16 h-18Z"/><path d="M292 52 l7 13 h-14Z"/>
+      </g>
+      <rect x="0" y="100" width="360" height="4" fill="var(--ink)" opacity=".55"/>
+      <!-- kiha 200 -->
+      <g>
+        <rect x="96" y="62" width="132" height="38" rx="7" fill="#F4EAD3"/>
+        <path d="M96 69a7 7 0 0 1 7-7h118a7 7 0 0 1 7 7v5H96z" fill="#E8790E"/>
+        <rect x="96" y="88" width="132" height="7" fill="#E8790E"/>
+        <g fill="var(--glass)">
+          <rect x="106" y="70" width="20" height="14" rx="2"/>
+          <rect x="132" y="70" width="20" height="14" rx="2"/>
+          <rect x="158" y="70" width="20" height="14" rx="2"/>
+          <rect x="184" y="70" width="20" height="14" rx="2"/>
+          <rect x="209" y="70" width="13" height="14" rx="2"/>
+        </g>
+        <rect x="152" y="70" width="3" height="30" fill="#D6C9AA"/>
+        <rect x="204" y="70" width="3" height="30" fill="#D6C9AA"/>
+        <circle cx="222" cy="93" r="3" fill="#FFF0B8"/>
+        <g fill="var(--ink)">
+          <circle cx="118" cy="101" r="5.5"/><circle cx="140" cy="101" r="5.5"/>
+          <circle cx="188" cy="101" r="5.5"/><circle cx="210" cy="101" r="5.5"/>
+        </g>
+      </g>
+      <!-- lighthouse far right -->
+      <g transform="translate(330,44)">
+        <path d="M4 6h8l3 26H1Z" fill="#FDFBF4"/>
+        <rect x="2" y="2" width="12" height="5" rx="1.5" fill="#D2382A"/>
+        <rect x="1" y="30" width="14" height="4" rx="1" fill="#E4DCC4"/>
+      </g>
+    </svg>
+
+    <div class="ticket-body">
+      <p class="eyebrow">CHIBA RAILWAY 2DAYS</p>
+      <h1>けんちゃん<span class="accent">サンキュー</span><br>フリーパス鉄道旅行</h1>
+      <p class="ticket-sub">小湊鉄道のトロッコと、銚子電鉄と犬吠埼。<br>千葉のローカル線を2日でぐるっと乗りつくす旅。</p>
+      <div class="perf"></div>
     </div>
-    <div class="now"><span id="clock">--:--</span></div>
-    <button class="jump" id="jump" type="button">いまここ</button>
-  </nav>
-
-  <div class="prog">
-    <span class="n"><span id="pn">0</span>/<span id="pt">0</span></span>
-    <div class="track"><div class="fill" id="pfill"></div></div>
-    <button type="button" id="reset">リセット</button>
+    <div class="ticket-foot">
+      <span class="stub">🚃 のる路線 9つ</span>
+      <span class="stub">💴 追加は800円だけ</span>
+      <span class="stub">🏠 どちらも17時前に帰宅</span>
+    </div>
   </div>
 
-  <!-- ================= DAY 1 ================= -->
-  <section class="day" id="day1" role="tabpanel" aria-labelledby="tab1">
+  <!-- ============ DATE PICKER ============ -->
+  <section class="datebox" aria-labelledby="dateh">
+    <h2 id="dateh">📅 いつ行く？（あとで決めてOK）</h2>
+    <div class="chips" id="dateChips">
+      <button class="chip" data-d1="9月19日（土）" data-d2="9月20日（日）" data-key="1920" aria-pressed="false">9/19・20</button>
+      <button class="chip" data-d1="9月20日（日）" data-d2="9月21日（月・祝）" data-key="2021" aria-pressed="false">9/20・21</button>
+      <button class="chip" data-d1="9月21日（月・祝）" data-d2="9月22日（火・休日）" data-key="2122" aria-pressed="false">9/21・22</button>
+      <button class="chip" data-d1="9月22日（火・休日）" data-d2="9月23日（水・祝）" data-key="2223" aria-pressed="false">9/22・23</button>
+      <button class="chip" data-d1="" data-d2="" data-key="none" aria-pressed="true">まだ未定</button>
+    </div>
+    <p class="fine">9/19（土）〜9/23（水・祝）は5連休。この中のどの連続2日を選んでも<strong>ぜんぶ土休日ダイヤ</strong>なので、下の時刻表はそのまま使えます。<br>ただし①トロッコの運転日 ②小湊鉄道の復旧のぐあい は日にちごとにちがうので、出発前に確認してください。</p>
+  </section>
+
+  <!-- ============ TABS ============ -->
+  <div class="tabs" role="tablist" aria-label="日程">
+    <button class="tab" role="tab" id="t1" aria-controls="p1" aria-selected="true">1日目<small>小湊鉄道とトロッコ</small></button>
+    <button class="tab" role="tab" id="t2" aria-controls="p2" aria-selected="false">2日目<small>銚子ぐるり</small></button>
+    <button class="tab" role="tab" id="t3" aria-controls="p3" aria-selected="false">じゅんび<small>持ち物・確認</small></button>
+  </div>
+
+  <!-- ============ DAY 1 ============ -->
+  <section id="p1" role="tabpanel" aria-labelledby="t1">
     <div class="dayhead">
-      <span class="daytag">DAY <b>1</b></span>
-      <h2>小湊鉄道＋トロッコ漬け</h2>
-      <p>船橋 7:19 発 → 16:37頃 帰着。約9時間半。同じ線路を、ちがう列車で4回走ります。</p>
-    </div>
-
-    <div class="art">
-      <svg viewBox="0 0 400 168" role="img" aria-label="里山を走る小湊鉄道の気動車のイラスト">
-        <rect width="400" height="168" fill="#BFE3F2"/>
-        <circle cx="332" cy="34" r="19" fill="#FFC61E"/>
-        <path d="M0 78 Q54 44 108 74 T210 72 Q262 44 318 76 T400 70 L400 168 L0 168Z" fill="#5FA469"/>
-        <path d="M0 96 Q70 70 148 94 T290 90 Q346 72 400 96 L400 168 L0 168Z" fill="#3E7F4E"/>
-        <g fill="#7FBF6A">
-          <ellipse cx="42" cy="86" rx="17" ry="20"/><ellipse cx="356" cy="82" rx="15" ry="18"/>
+      <svg class="hero-art" viewBox="0 0 360 96" role="img" aria-label="赤いディーゼル機関車が緑のトロッコ客車を引いて里山を走るイラスト">
+        <rect width="360" height="96" fill="var(--sky)"/>
+        <g fill="var(--cloud)" opacity=".85">
+          <ellipse cx="300" cy="20" rx="20" ry="9"/><ellipse cx="316" cy="18" rx="13" ry="9"/>
         </g>
-        <rect y="112" width="400" height="14" fill="#C9B27E"/>
-        <g fill="#8E7548">
-          <rect x="6" y="112" width="4" height="14"/><rect x="34" y="112" width="4" height="14"/>
-          <rect x="62" y="112" width="4" height="14"/><rect x="90" y="112" width="4" height="14"/>
-          <rect x="118" y="112" width="4" height="14"/><rect x="146" y="112" width="4" height="14"/>
-          <rect x="174" y="112" width="4" height="14"/><rect x="202" y="112" width="4" height="14"/>
-          <rect x="230" y="112" width="4" height="14"/><rect x="258" y="112" width="4" height="14"/>
-          <rect x="286" y="112" width="4" height="14"/><rect x="314" y="112" width="4" height="14"/>
-          <rect x="342" y="112" width="4" height="14"/><rect x="370" y="112" width="4" height="14"/>
-        </g>
-        <rect y="118" width="400" height="4" fill="#6E6257"/>
-        <!-- railcar -->
+        <path d="M0 58 Q70 28 150 54 Q230 78 300 48 Q335 34 360 46 L360 96 L0 96Z" fill="var(--hill)"/>
+        <path d="M0 74 Q90 54 180 74 Q270 92 360 70 L360 96 L0 96Z" fill="var(--hill2)"/>
+        <rect x="0" y="84" width="360" height="4" fill="var(--ink)" opacity=".5"/>
+        <!-- coaches -->
         <g>
-          <rect x="88" y="52" width="212" height="62" rx="9" fill="#F2ECDC" stroke="#2A2620" stroke-width="3"/>
-          <rect x="88" y="46" width="212" height="12" rx="6" fill="#A9AEB0" stroke="#2A2620" stroke-width="3"/>
-          <rect x="90" y="84" width="208" height="11" fill="#D2551A"/>
-          <rect x="90" y="66" width="208" height="6" fill="#D2551A"/>
-          <g fill="#274A61" stroke="#2A2620" stroke-width="2">
-            <rect x="104" y="62" width="30" height="20" rx="3"/>
-            <rect x="146" y="62" width="30" height="20" rx="3"/>
-            <rect x="212" y="62" width="30" height="20" rx="3"/>
-            <rect x="254" y="62" width="30" height="20" rx="3"/>
-          </g>
-          <rect x="184" y="60" width="20" height="40" rx="2" fill="#DED6C2" stroke="#2A2620" stroke-width="2"/>
-          <circle cx="122" cy="112" r="9" fill="#3B3630" stroke="#2A2620" stroke-width="2"/>
-          <circle cx="160" cy="112" r="9" fill="#3B3630" stroke="#2A2620" stroke-width="2"/>
-          <circle cx="228" cy="112" r="9" fill="#3B3630" stroke="#2A2620" stroke-width="2"/>
-          <circle cx="266" cy="112" r="9" fill="#3B3630" stroke="#2A2620" stroke-width="2"/>
+          <rect x="34" y="56" width="58" height="26" rx="4" fill="#2C6E49"/>
+          <rect x="34" y="52" width="58" height="6" rx="3" fill="#F4EAD3"/>
+          <g fill="var(--glass)"><rect x="40" y="62" width="14" height="9" rx="1.5"/><rect x="58" y="62" width="14" height="9" rx="1.5"/><rect x="76" y="62" width="11" height="9" rx="1.5"/></g>
+          <rect x="100" y="56" width="58" height="26" rx="4" fill="#2C6E49"/>
+          <rect x="100" y="52" width="58" height="6" rx="3" fill="#F4EAD3"/>
+          <g fill="var(--glass)"><rect x="106" y="62" width="14" height="9" rx="1.5"/><rect x="124" y="62" width="14" height="9" rx="1.5"/><rect x="142" y="62" width="11" height="9" rx="1.5"/></g>
+          <!-- loco -->
+          <rect x="170" y="46" width="76" height="36" rx="5" fill="#C0392B"/>
+          <rect x="176" y="38" width="42" height="12" rx="3" fill="#C0392B"/>
+          <rect x="182" y="41" width="30" height="8" rx="1.5" fill="var(--glass)"/>
+          <rect x="170" y="70" width="76" height="6" fill="#F4EAD3"/>
+          <circle cx="241" cy="79" r="3" fill="#FFF0B8"/>
+          <g fill="var(--ink)"><circle cx="46" cy="84" r="4"/><circle cx="80" cy="84" r="4"/><circle cx="112" cy="84" r="4"/><circle cx="146" cy="84" r="4"/><circle cx="184" cy="84" r="5"/><circle cx="204" cy="84" r="5"/><circle cx="232" cy="84" r="5"/></g>
         </g>
-        <rect y="126" width="400" height="42" fill="#2F5F3D"/>
-        <g fill="#FFC61E">
-          <circle cx="24" cy="140" r="4"/><circle cx="58" cy="150" r="4"/><circle cx="96" cy="138" r="4"/>
-          <circle cx="140" cy="152" r="4"/><circle cx="188" cy="140" r="4"/><circle cx="236" cy="151" r="4"/>
-          <circle cx="284" cy="139" r="4"/><circle cx="330" cy="150" r="4"/><circle cx="374" cy="141" r="4"/>
-        </g>
+        <g fill="var(--hill2)"><path d="M310 62 l10 18h-20Z"/><path d="M310 53 l8 14h-16Z"/></g>
       </svg>
+      <div class="dayhead-txt">
+        <span class="kicker num">DAY 1</span>
+        <h2>小湊鉄道を、３つの乗り方で。</h2>
+        <p class="date" data-day="1">日にちはこれから決めます</p>
+        <p class="lead">ふつうの列車で往復して、真ん中にトロッコ。同じ路線を、ちがう車両とちがうスピードで味わう日。</p>
+        <div class="routeline">
+          <span>JR</span><b>›</b><span>小湊鉄道</span><b>›</b><span>トロッコ</span><b>›</b><span>小湊鉄道</span><b>›</b><span>JR</span>
+        </div>
+      </div>
     </div>
-    <p class="cap">小湊鉄道の普通列車（キハ200形）。クリーム色に朱色の帯が里山の目印。</p>
 
-    <div class="strip">
-      <span class="pillinfo star">★トロッコ1号 乗車</span>
-      <span class="pillinfo">昼食94分</span>
-      <span class="pillinfo">指定席券 別途800円</span>
-    </div>
+    <ol class="tl">
+      <li class="stop big"><span class="t num">7:19</span><span class="s">船橋<em>発</em></span><span class="tag go">スタート</span></li>
+      <li class="ride" data-line="jr" data-id="d1-1" style="--lc:var(--l-jr)"></li>
+      <li class="stop"><span class="t num">7:56</span><span class="s">五井<em>着</em></span><span class="tag">のりかえ 27分</span></li>
+      <li class="ride" data-line="kominato" data-id="d1-2" style="--lc:var(--l-kominato)"></li>
+      <li class="stop"><span class="t num">8:50</span><span class="s">上総牛久<em>着</em></span><span class="tag">おりて 25分</span></li>
+      <li class="stay" data-id="d1-s1"></li>
+      <li class="stop"><span class="t num">9:15</span><span class="s">上総牛久<em>発</em></span></li>
+      <li class="ride" data-line="kominato" data-id="d1-3" style="--lc:var(--l-kominato)"></li>
+      <li class="stop"><span class="t num">9:42</span><span class="s">五井<em>着</em></span><span class="tag">トロッコまで 56分</span></li>
+      <li class="stay" data-id="d1-s2"></li>
+      <li class="stop big"><span class="t num">10:38</span><span class="s">五井<em>発</em></span><span class="tag hot">★ ハイライト</span></li>
+      <li class="ride" data-line="torokko" data-id="d1-4" style="--lc:var(--red)"></li>
+      <li class="stop big"><span class="t num">12:48</span><span class="s">養老渓谷<em>着</em></span><span class="tag">おひるごはん</span></li>
+      <li class="stay" data-id="d1-s3"></li>
+      <li class="stop"><span class="t num">14:22</span><span class="s">養老渓谷<em>発</em></span></li>
+      <li class="ride" data-line="kominato" data-id="d1-5" style="--lc:var(--l-kominato)"></li>
+      <li class="stop"><span class="t num">15:42</span><span class="s">五井<em>着</em></span><span class="tag">のりかえ 25分</span></li>
+      <li class="ride" data-line="jr" data-id="d1-6" style="--lc:var(--l-jr)"></li>
+      <li class="stop big"><span class="t num">16:48</span><span class="s">船橋<em>着</em></span><span class="tag go">ゴール</span></li>
+    </ol>
 
-    <!-- 1 -->
-    <article class="seg" data-key="d1-1" data-dep="7:19" style="--l:var(--l-jr)">
-      <div class="seghead">
-        <span class="chip">JR総武線快速</span><span class="dur">37分</span>
-        <button class="stamp" type="button" aria-pressed="false"></button>
-      </div>
-      <ol class="stops">
-        <li class="stop"><time>7:19</time><span class="dot"></span><span class="stn">船橋<em>ハツ</em></span></li>
-        <li class="stop"><time>7:56</time><span class="dot"></span><span class="stn">五井<em>チャク</em></span></li>
-      </ol>
-      <p class="note">内房線へ直通するので<b>乗換なし</b>。座って一気に房総へ。</p>
-    </article>
-    <div class="gap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 8h13l-3-3M20 16H7l3 3"/></svg>五井で乗換 <b>27分</b></div>
-
-    <!-- 2 -->
-    <article class="seg" data-key="d1-2" data-dep="8:23" style="--l:var(--l-kom)">
-      <div class="seghead">
-        <span class="chip">小湊鉄道 普通</span><span class="dur">73分</span>
-        <button class="stamp" type="button" aria-pressed="false"></button>
-      </div>
-      <ol class="stops">
-        <li class="stop"><time>8:23</time><span class="dot"></span><span class="stn">五井<em>ハツ</em></span></li>
-        <li class="stop"><time>9:36</time><span class="dot"></span><span class="stn">養老渓谷<em>チャク</em></span></li>
-      </ol>
-      <p class="note">まずは普通列車で里山を走破。窓を開けて、田んぼと踏切の音を浴びる時間。</p>
-    </article>
-    <div class="gap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 8h13l-3-3M20 16H7l3 3"/></svg>そのまま折返し <b>11分</b></div>
-
-    <!-- 3 -->
-    <article class="seg" data-key="d1-3" data-dep="9:47" style="--l:var(--l-kom)">
-      <div class="seghead">
-        <span class="chip">小湊鉄道 普通</span><span class="dur">35分</span>
-        <button class="stamp" type="button" aria-pressed="false"></button>
-      </div>
-      <ol class="stops">
-        <li class="stop"><time>9:47</time><span class="dot"></span><span class="stn">養老渓谷<em>ハツ</em></span></li>
-        <li class="stop"><time>10:22</time><span class="dot"></span><span class="stn">五井<em>チャク</em></span></li>
-      </ol>
-      <p class="note">五井方面へ折返し。トロッコに乗るため、いったん戻ります。</p>
-    </article>
-    <div class="gap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 8h13l-3-3M20 16H7l3 3"/></svg>五井で乗換 <b>16分</b>　トロッコのホームへ</div>
-
-    <!-- 4 TOROKKO -->
-    <article class="seg hero" data-key="d1-4" data-dep="10:38" style="--l:var(--l-tor)">
-      <span class="badge">本日のメイン</span>
-      <div class="seghead">
-        <span class="chip">房総里山トロッコ 1号</span><span class="dur">130分</span>
-        <button class="stamp" type="button" aria-pressed="false"></button>
-      </div>
-      <ol class="stops">
-        <li class="stop"><time>10:38</time><span class="dot"></span><span class="stn">五井<em>ハツ</em></span></li>
-        <li class="stop"><time>12:48</time><span class="dot"></span><span class="stn">養老渓谷<em>チャク</em></span></li>
-      </ol>
-      <p class="note">さっき普通列車で2回通った同じ線路を、今度は<b>窓のないトロッコ</b>で。同じ景色が、まったく別物に見えます。<br><b>指定席券800円は別途必要</b>（フリーパスとは別）。</p>
-    </article>
-
-    <div class="art" style="margin-top:10px">
-      <svg viewBox="0 0 400 150" role="img" aria-label="房総里山トロッコの客車のイラスト">
-        <rect width="400" height="150" fill="#DFF0DC"/>
-        <g fill="#9CCB92">
-          <circle cx="46" cy="46" r="26"/><circle cx="88" cy="38" r="20"/>
-          <circle cx="318" cy="42" r="24"/><circle cx="356" cy="52" r="18"/>
+    <div class="card spot">
+      <svg class="art" viewBox="0 0 360 84" role="img" aria-label="窓のないトロッコ客車のイラスト">
+        <rect width="360" height="84" fill="var(--sky)"/>
+        <path d="M0 52 Q90 30 180 50 Q270 70 360 46 L360 84 L0 84Z" fill="var(--hill)"/>
+        <g transform="translate(84,16)">
+          <rect x="0" y="26" width="192" height="26" rx="4" fill="#2C6E49"/>
+          <rect x="6" y="6" width="180" height="7" rx="3.5" fill="#F4EAD3"/>
+          <g fill="#F4EAD3"><rect x="10" y="12" width="5" height="15"/><rect x="60" y="12" width="5" height="15"/><rect x="110" y="12" width="5" height="15"/><rect x="160" y="12" width="5" height="15"/></g>
+          <g fill="var(--ink)" opacity=".75"><circle cx="34" cy="55" r="5"/><circle cx="62" cy="55" r="5"/><circle cx="130" cy="55" r="5"/><circle cx="158" cy="55" r="5"/></g>
+          <g fill="#F7C948"><circle cx="30" cy="22" r="4"/><circle cx="80" cy="22" r="4"/><circle cx="130" cy="22" r="4"/><circle cx="170" cy="22" r="4"/></g>
         </g>
-        <rect y="104" width="400" height="10" fill="#C9B27E"/>
-        <rect y="110" width="400" height="4" fill="#6E6257"/>
-        <!-- trolley -->
+        <rect x="0" y="72" width="360" height="4" fill="var(--ink)" opacity=".45"/>
+      </svg>
+      <div class="in">
+        <h3>★ 房総里山トロッコ 1号</h3>
+        <p><strong>五井 10:38 → 養老渓谷 12:48（2時間10分）</strong><br>窓のない客車で、里山をゆっくり走ります。フリーパスとは別に<strong>指定席券</strong>が必要です。運転日はカレンダーで決まっているので、日にちを決めたらいちばん最初に確認するところ。</p>
+        <span class="pricetag">指定席券 <b>800</b> 円／人</span>
+      </div>
+    </div>
+
+    <div class="card alert">
+      <h3>⚠️ 1日目だけの大きな条件</h3>
+      <p>小湊鉄道は豪雨の被害から<strong>復旧の途中</strong>です。9月1日時点では里見〜上総中野が代行バス。会社の発表では「<strong>9月中旬〜9月末の休日は、五井〜上総中野を終日 列車で運転</strong>」する計画なので、この旅程は計画どおりなら成立します。<br>ただし会社自身が「工事の進みぐあいで計画が変わることがある」と書いています。<strong>時刻表の上では完全に成立、あとは復旧しだい</strong>。出発の3日前くらいに、もう一度チェックしてください。</p>
+    </div>
+  </section>
+
+  <!-- ============ DAY 2 ============ -->
+  <section id="p2" role="tabpanel" aria-labelledby="t2" hidden>
+    <div class="dayhead">
+      <svg class="hero-art" viewBox="0 0 360 96" role="img" aria-label="犬吠埼の灯台と海、赤い銚子電鉄の電車のイラスト">
+        <rect width="360" height="96" fill="var(--sky)"/>
+        <circle cx="52" cy="22" r="13" fill="var(--gold)" opacity=".85"/>
+        <g stroke="var(--cloud)" stroke-width="2" fill="none" stroke-linecap="round">
+          <path d="M96 20 q5-5 10 0 q5-5 10 0"/><path d="M130 32 q4-4 8 0 q4-4 8 0"/>
+        </g>
+        <rect x="0" y="46" width="360" height="26" fill="var(--sea)"/>
+        <g stroke="var(--cloud)" stroke-width="2" fill="none" opacity=".55" stroke-linecap="round">
+          <path d="M14 56 q7-5 14 0 t14 0"/><path d="M96 64 q7-5 14 0 t14 0"/><path d="M210 54 q7-5 14 0 t14 0"/>
+        </g>
+        <path d="M0 68 Q90 60 180 68 Q270 76 360 66 L360 96 L0 96Z" fill="var(--sand)"/>
+        <!-- lighthouse -->
+        <g transform="translate(258,6)">
+          <path d="M46 40 q14-10 30 0 l4 30H42Z" fill="var(--hill2)"/>
+          <path d="M54 16h14l6 44H48Z" fill="#FDFBF4"/>
+          <rect x="52" y="9" width="18" height="8" rx="2" fill="#D2382A"/>
+          <rect x="55" y="3" width="12" height="7" rx="2" fill="#FDFBF4"/>
+          <rect x="50" y="58" width="22" height="5" rx="1.5" fill="#E4DCC4"/>
+          <g stroke="#F7C948" stroke-width="2.5" stroke-linecap="round" opacity=".8"><path d="M48 12 L34 6"/><path d="M74 12 L88 6"/></g>
+        </g>
+        <!-- choshi train -->
         <g>
-          <rect x="56" y="30" width="290" height="12" rx="5" fill="#2C7048" stroke="#1B2C22" stroke-width="3"/>
-          <rect x="66" y="42" width="6" height="34" fill="#1B2C22"/>
-          <rect x="132" y="42" width="6" height="34" fill="#1B2C22"/>
-          <rect x="198" y="42" width="6" height="34" fill="#1B2C22"/>
-          <rect x="264" y="42" width="6" height="34" fill="#1B2C22"/>
-          <rect x="330" y="42" width="6" height="34" fill="#1B2C22"/>
-          <rect x="56" y="74" width="290" height="30" rx="5" fill="#2C7048" stroke="#1B2C22" stroke-width="3"/>
-          <rect x="60" y="80" width="282" height="5" fill="#C99A2E"/>
-          <rect x="60" y="94" width="282" height="4" fill="#C99A2E"/>
-          <!-- passengers -->
-          <g fill="#F2ECDC" stroke="#1B2C22" stroke-width="2">
-            <circle cx="96" cy="62" r="8"/><circle cx="164" cy="64" r="8"/>
-            <circle cx="230" cy="62" r="8"/><circle cx="298" cy="64" r="8"/>
-          </g>
-          <g fill="#D2551A">
-            <rect x="88" y="70" width="17" height="6" rx="3"/><rect x="156" y="72" width="17" height="5" rx="2.5"/>
-            <rect x="222" y="70" width="17" height="6" rx="3"/><rect x="290" y="72" width="17" height="5" rx="2.5"/>
-          </g>
-          <circle cx="96" cy="104" r="9" fill="#3B3630" stroke="#1B2C22" stroke-width="2"/>
-          <circle cx="140" cy="104" r="9" fill="#3B3630" stroke="#1B2C22" stroke-width="2"/>
-          <circle cx="262" cy="104" r="9" fill="#3B3630" stroke="#1B2C22" stroke-width="2"/>
-          <circle cx="306" cy="104" r="9" fill="#3B3630" stroke="#1B2C22" stroke-width="2"/>
+          <rect x="20" y="60" width="120" height="26" rx="5" fill="#D2382A"/>
+          <rect x="20" y="76" width="120" height="6" fill="#F4EAD3"/>
+          <rect x="20" y="60" width="120" height="4" rx="2" fill="#F4EAD3"/>
+          <g fill="var(--glass)"><rect x="27" y="66" width="16" height="10" rx="2"/><rect x="48" y="66" width="16" height="10" rx="2"/><rect x="69" y="66" width="16" height="10" rx="2"/><rect x="90" y="66" width="16" height="10" rx="2"/><rect x="111" y="66" width="22" height="10" rx="2"/></g>
+          <circle cx="136" cy="82" r="2.5" fill="#FFF0B8"/>
+          <g fill="var(--ink)"><circle cx="40" cy="88" r="4.5"/><circle cx="58" cy="88" r="4.5"/><circle cx="104" cy="88" r="4.5"/><circle cx="122" cy="88" r="4.5"/></g>
         </g>
-        <rect y="114" width="400" height="36" fill="#3E7F4E"/>
+        <rect x="0" y="90" width="360" height="3.5" fill="var(--ink)" opacity=".45"/>
       </svg>
-    </div>
-    <p class="cap">壁のないトロッコ客車。風とにおいと音が、そのまま入ってきます。</p>
-
-    <div class="gap stay" style="margin-top:12px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 3v18M5 3h10l-2 5 2 5H5"/></svg>養老渓谷で昼食・駅周辺さんぽ <b>94分</b>（12:48〜14:22）</div>
-
-    <!-- 5 -->
-    <article class="seg" data-key="d1-5" data-dep="14:22" style="--l:var(--l-kom)">
-      <div class="seghead">
-        <span class="chip">小湊鉄道 普通</span><span class="dur">80分</span>
-        <button class="stamp" type="button" aria-pressed="false"></button>
+      <div class="dayhead-txt">
+        <span class="kicker num">DAY 2</span>
+        <h2>６つの路線をつないで、海まで。</h2>
+        <p class="date" data-day="2">日にちはこれから決めます</p>
+        <p class="lead">東海神からスタート。地下鉄みたいな東葉高速から京成、JR成田線、そして銚子電鉄。千葉をおおきく一周する日。</p>
+        <div class="routeline">
+          <span>東葉高速</span><b>›</b><span>京成</span><b>›</b><span>成田線</span><b>›</b><span>銚子電鉄</span><b>›</b><span>総武本線</span><b>›</b><span>総武快速</span>
+        </div>
       </div>
-      <ol class="stops">
-        <li class="stop"><time>14:22</time><span class="dot"></span><span class="stn">養老渓谷<em>ハツ</em></span></li>
-        <li class="stop"><time>15:42</time><span class="dot"></span><span class="stn">五井<em>チャク</em></span></li>
-      </ol>
-      <p class="note">4本目。行きに見つけたものを、帰りにもう一度さがしながら。</p>
-    </article>
-    <div class="gap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 8h13l-3-3M20 16H7l3 3"/></svg>五井で乗換 <b>約17分</b></div>
-
-    <!-- 6 -->
-    <article class="seg" data-key="d1-6" data-dep="15:59" style="--l:var(--l-jr)">
-      <div class="seghead">
-        <span class="chip">JR内房線・総武線</span><span class="dur">約38分</span>
-        <button class="stamp" type="button" aria-pressed="false"></button>
-      </div>
-      <ol class="stops">
-        <li class="stop"><time>15:59<sub>頃</sub></time><span class="dot"></span><span class="stn">五井<em>ハツ</em></span></li>
-        <li class="stop"><time>16:37<sub>頃</sub></time><span class="dot"></span><span class="stn">船橋<em>チャク</em></span></li>
-      </ol>
-      <p class="note">おつかれさま。1日目、完走です。</p>
-    </article>
-
-    <div class="card kid">
-      <h3>けんちゃんミッション</h3>
-      <p>1日目は、五井〜養老渓谷の<b>同じ線路を4回</b>走ります。「往復してるだけ」に見えて、トロッコに乗ると景色の見え方がガラッと変わります。</p>
-      <ol>
-        <li>1本目の普通列車で、目印を3つ決める（大きな木・赤い屋根・川の橋 など）</li>
-        <li>トロッコでその3つを見つけ出す。窓がないぶん、よく見える</li>
-        <li>帰りの普通列車で、もう一度さがす。何回見つけられた？</li>
-      </ol>
     </div>
 
-    <div class="card">
-      <h3>出発前に確認すること</h3>
-      <ul class="checks">
-        <li><b>小湊鉄道の運転状況</b>を直前にチェック。現在復旧途中で、いまの計画では9月中旬〜月末の休日は五井〜上総中野を終日運転の予定ですが、変更の可能性があります。</li>
-        <li><b>トロッコの指定席券800円</b>を確保。フリーパスとは別に必要です。</li>
-        <li>養老渓谷の昼食は<b>94分</b>。駅周辺で食べられる場所を先に決めておくと安心。</li>
-      </ul>
+    <ol class="tl">
+      <li class="stop big"><span class="t num">7:17</span><span class="s">東海神<em>発</em></span><span class="tag go">スタート</span></li>
+      <li class="ride" data-line="toyo" data-id="d2-1" style="--lc:var(--l-toyo)"></li>
+      <li class="stop"><span class="t num">7:35</span><span class="s">東葉勝田台<em>着</em></span><span class="tag">のりかえ 14分</span></li>
+      <li class="ride" data-line="walk" data-id="d2-w1" style="--lc:var(--l-walk)"></li>
+      <li class="stop"><span class="t num">7:49</span><span class="s">勝田台<em>発</em></span></li>
+      <li class="ride" data-line="keisei" data-id="d2-2" style="--lc:var(--l-keisei)"></li>
+      <li class="stop"><span class="t num">8:13</span><span class="s">京成成田<em>着</em></span><span class="tag">のりかえ 27分</span></li>
+      <li class="ride" data-line="walk" data-id="d2-w2" style="--lc:var(--l-walk)"></li>
+      <li class="stop"><span class="t num">8:40</span><span class="s">成田<em>発</em></span></li>
+      <li class="ride" data-line="narita" data-id="d2-3" style="--lc:var(--l-narita)"></li>
+      <li class="stop big"><span class="t num">9:56</span><span class="s">銚子<em>着</em></span><span class="tag hot">のりかえ 4分！</span></li>
+      <li class="ride" data-line="choshi" data-id="d2-4" style="--lc:var(--l-choshi)"></li>
+      <li class="stop"><span class="t num">10:22</span><span class="s">外川<em>着</em></span><span class="tag">終着駅を見る 17分</span></li>
+      <li class="stay" data-id="d2-s1"></li>
+      <li class="stop"><span class="t num">10:39</span><span class="s">外川<em>発</em></span></li>
+      <li class="ride" data-line="choshi" data-id="d2-5" style="--lc:var(--l-choshi)"></li>
+      <li class="stop big"><span class="t num">10:42</span><span class="s">犬吠<em>着</em></span><span class="tag">さんぽ 65分</span></li>
+      <li class="stay" data-id="d2-s2"></li>
+      <li class="stop"><span class="t num">11:47</span><span class="s">犬吠<em>発</em></span></li>
+      <li class="ride" data-line="choshi" data-id="d2-6" style="--lc:var(--l-choshi)"></li>
+      <li class="stop"><span class="t num">12:03</span><span class="s">銚子<em>着</em></span><span class="tag">おひるごはん 69分</span></li>
+      <li class="stay" data-id="d2-s3"></li>
+      <li class="stop"><span class="t num">13:12</span><span class="s">銚子<em>発</em></span></li>
+      <li class="ride" data-line="choshi" data-id="d2-7" style="--lc:var(--l-choshi)"></li>
+      <li class="stop"><span class="t num">13:34</span><span class="s">外川<em>着</em></span><span class="tag">おりかえし 7分</span></li>
+      <li class="ride" data-line="choshi" data-id="d2-8" style="--lc:var(--l-choshi)"></li>
+      <li class="stop"><span class="t num">14:00</span><span class="s">銚子<em>着</em></span><span class="tag">おみやげ 57分</span></li>
+      <li class="stay" data-id="d2-s4"></li>
+      <li class="stop"><span class="t num">14:57</span><span class="s">銚子<em>発</em></span></li>
+      <li class="ride" data-line="jr" data-id="d2-9" style="--lc:var(--l-jr)"></li>
+      <li class="stop"><span class="t num">16:33</span><span class="s">千葉<em>着</em></span><span class="tag">のりかえ 11分</span></li>
+      <li class="ride" data-line="jr" data-id="d2-10" style="--lc:var(--l-jr)"></li>
+      <li class="stop big"><span class="t num">16:58</span><span class="s">船橋<em>着</em></span><span class="tag go">ゴール</span></li>
+    </ol>
+
+    <div class="card alert">
+      <h3>⚠️ この旅、唯一の勝負どころ</h3>
+      <p><strong>銚子 9:56着 → 10:00発</strong>の<strong>4分のりかえ</strong>。定刻ならつながる組み合わせですが、JRが数分おくれるとアウトです。<br>成田線を降りたら、まっすぐ銚子電鉄のホームへ。あわてなくて大丈夫、<strong>逃してもプランBがあります</strong>。</p>
     </div>
 
     <details>
-      <summary>なぜ「6時発」ではなく「7:19発」なのか</summary>
-      <div class="body">
-        <p>6時台に出れば、朝のうちに「五井→上総中野→五井」という小湊鉄道の全線往復を1本入れられます。7時版ではそれがなくなります。</p>
-        <p>ただし家族旅行として見ると、<b>7:19出発 → 16:40帰宅で約9時間半</b>。トロッコまで含めて十分に濃い1日です。疲労と満足度のバランスは、こちらの方が良いと思います。</p>
+      <summary>🅱️ 10:00に乗れなかったときのプランB<span class="arw">▼</span></summary>
+      <div class="details-in">
+        <p>お昼ごはんの場所を<strong>銚子から犬吠にうつすだけ</strong>。旅は崩れません。帰りの14:57のJRにもそのままつながります。</p>
+        <ul class="mini">
+          <li><span class="t num">11:15</span><span>銚子 発</span></li>
+          <li><span class="t num">11:37</span><span>外川 着</span></li>
+          <li><span class="t num">11:44</span><span>外川 発</span></li>
+          <li><span class="t num">11:47</span><span>犬吠 着 → ここで昼食＋散策 61分</span></li>
+          <li><span class="t num">12:48</span><span>犬吠 発</span></li>
+          <li><span class="t num">13:04</span><span>銚子 着</span></li>
+          <li><span class="t num">13:12</span><span>銚子 発（ここから本編と同じ）</span></li>
+          <li><span class="t num">14:00</span><span>銚子 着 → 14:57のJRへ</span></li>
+        </ul>
       </div>
     </details>
+
+    <div class="card spot">
+      <svg class="art" viewBox="0 0 360 84" role="img" aria-label="犬吠埼灯台と太平洋のイラスト">
+        <rect width="360" height="84" fill="var(--sky)"/>
+        <rect x="0" y="38" width="360" height="26" fill="var(--sea)"/>
+        <g stroke="var(--cloud)" stroke-width="2" fill="none" opacity=".5" stroke-linecap="round">
+          <path d="M20 48 q7-5 14 0 t14 0"/><path d="M280 52 q7-5 14 0 t14 0"/><path d="M150 58 q7-5 14 0 t14 0"/>
+        </g>
+        <path d="M0 60 Q90 52 180 60 Q270 68 360 58 L360 84 L0 84Z" fill="var(--sand)"/>
+        <g transform="translate(140,2)">
+          <path d="M20 46 q22-14 46 0 l6 26H14Z" fill="var(--hill2)"/>
+          <path d="M32 14h20l9 50H23Z" fill="#FDFBF4"/>
+          <rect x="29" y="5" width="26" height="10" rx="2.5" fill="#D2382A"/>
+          <rect x="34" y="-3" width="16" height="9" rx="2.5" fill="#FDFBF4"/>
+          <rect x="26" y="60" width="32" height="6" rx="2" fill="#E4DCC4"/>
+          <g fill="var(--glass)"><rect x="36" y="24" width="12" height="9" rx="2"/><rect x="37" y="40" width="10" height="8" rx="2"/></g>
+          <g stroke="#F7C948" stroke-width="3" stroke-linecap="round" opacity=".75"><path d="M25 9 L6 1"/><path d="M59 9 L78 1"/></g>
+        </g>
+        <g stroke="var(--ink)" stroke-width="2" fill="none" opacity=".5" stroke-linecap="round"><path d="M60 18 q6-6 12 0 q6-6 12 0"/><path d="M300 24 q5-5 10 0 q5-5 10 0"/></g>
+      </svg>
+      <div class="in">
+        <h3>🗼 犬吠で 65分</h3>
+        <p>犬吠駅から灯台まではあるいてすぐ。日本でいちばん早く初日の出が見える岬です。時間は多くないので、<strong>灯台をひとつ見て、海をながめて、駅にもどる</strong>くらいの気持ちで。銚子電鉄名物のぬれ煎餅は駅で買えます。</p>
+      </div>
+    </div>
   </section>
 
-  <!-- ================= DAY 2 ================= -->
-  <section class="day" id="day2" role="tabpanel" aria-labelledby="tab2" hidden>
-    <div class="dayhead">
-      <span class="daytag">DAY <b>2</b></span>
-      <h2>7路線級・銚子ループ</h2>
-      <p>船橋 6:55 発 → 17時前後 帰着。行きと帰りで別ルート、千葉県東部を線路でぐるり一周します。</p>
+  <!-- ============ PREP ============ -->
+  <section id="p3" role="tabpanel" aria-labelledby="t3" hidden>
+    <div class="card">
+      <h3>🎫 きっぷとお金</h3>
+      <p>この2日間で乗る路線は、<strong>ぜんぶサンキューちばフリーパスの対象</strong>です。JR、小湊鉄道、東葉高速、京成、銚子電鉄、どれも追加のきっぷはいりません。<br>例外はひとつだけ、<strong>房総里山トロッコの指定席券 800円／人</strong>。ここだけ別に必要です。</p>
+      <ul class="checklist">
+        <li><span class="dot">1</span><span>フリーパスは連続する2日間で使います。1日目の朝に買えばOK。</span></li>
+        <li><span class="dot">2</span><span>トロッコの指定席券は、運転日が決まったらできるだけ早く。</span></li>
+        <li><span class="dot">3</span><span>お昼ごはん代・おみやげ代は別に用意。</span></li>
+      </ul>
     </div>
 
-    <div class="art">
-      <svg viewBox="0 0 400 168" role="img" aria-label="犬吠埼灯台と海、銚子電鉄の電車のイラスト">
-        <rect width="400" height="168" fill="#9FD8EE"/>
-        <circle cx="60" cy="36" r="16" fill="#FFF3C4"/>
-        <path d="M0 66 h400 v42 H0z" fill="#2E7EAE"/>
-        <g fill="#79C0DE">
-          <path d="M0 74 q22 -8 44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 v6 H0z"/>
-          <path d="M0 92 q22 -8 44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 v6 H0z"/>
-        </g>
-        <!-- lighthouse -->
-        <g>
-          <path d="M300 50 h30 l7 58 h-44z" fill="#F7F4EC" stroke="#2A2620" stroke-width="3"/>
-          <rect x="296" y="40" width="38" height="12" rx="3" fill="#C42F2C" stroke="#2A2620" stroke-width="3"/>
-          <rect x="304" y="26" width="22" height="16" rx="3" fill="#FFC61E" stroke="#2A2620" stroke-width="3"/>
-          <path d="M304 22 h22 l-5 -8 h-12z" fill="#C42F2C" stroke="#2A2620" stroke-width="3"/>
-          <path d="M286 108 h58 v8 h-58z" fill="#E8E2D4" stroke="#2A2620" stroke-width="3"/>
-          <g stroke="#FFC61E" stroke-width="4" stroke-linecap="round" opacity=".85">
-            <path d="M292 34 l-22 -8"/><path d="M292 40 l-24 4"/>
-          </g>
-        </g>
-        <path d="M0 108 q60 -12 130 -2 t150 2 v60 H0z" fill="#7D8B62"/>
-        <rect y="118" width="400" height="8" fill="#C9B27E"/>
-        <rect y="123" width="400" height="4" fill="#6E6257"/>
-        <!-- choshi dentetsu -->
-        <g>
-          <rect x="40" y="76" width="180" height="46" rx="8" fill="#C42F2C" stroke="#2A2620" stroke-width="3"/>
-          <rect x="40" y="70" width="180" height="10" rx="5" fill="#E8E2D4" stroke="#2A2620" stroke-width="3"/>
-          <rect x="44" y="98" width="172" height="7" fill="#F7DE8A"/>
-          <g fill="#274A61" stroke="#2A2620" stroke-width="2">
-            <rect x="54" y="84" width="26" height="18" rx="3"/>
-            <rect x="92" y="84" width="26" height="18" rx="3"/>
-            <rect x="150" y="84" width="26" height="18" rx="3"/>
-            <rect x="186" y="84" width="26" height="18" rx="3"/>
-          </g>
-          <rect x="126" y="82" width="18" height="36" rx="2" fill="#E8E2D4" stroke="#2A2620" stroke-width="2"/>
-          <circle cx="72" cy="120" r="8" fill="#3B3630" stroke="#2A2620" stroke-width="2"/>
-          <circle cx="104" cy="120" r="8" fill="#3B3630" stroke="#2A2620" stroke-width="2"/>
-          <circle cx="160" cy="120" r="8" fill="#3B3630" stroke="#2A2620" stroke-width="2"/>
-          <circle cx="192" cy="120" r="8" fill="#3B3630" stroke="#2A2620" stroke-width="2"/>
-        </g>
-        <rect y="130" width="400" height="38" fill="#5E7047"/>
-        <g fill="#8FA85F">
-          <circle cx="30" cy="146" r="9"/><circle cx="78" cy="152" r="9"/><circle cx="128" cy="145" r="9"/>
-          <circle cx="182" cy="153" r="9"/><circle cx="236" cy="146" r="9"/><circle cx="292" cy="152" r="9"/>
-          <circle cx="348" cy="146" r="9"/>
-        </g>
-      </svg>
-    </div>
-    <p class="cap">犬吠埼灯台と銚子電鉄。全線6.4km・約20分の、日本でいちばん元気なミニ鉄道。</p>
-
-    <div class="strip">
-      <span class="pillinfo star">6路線を乗り継ぎ</span>
-      <span class="pillinfo warn">銚子で乗換4分</span>
-      <span class="pillinfo">徒歩乗換 2回</span>
-    </div>
-
-    <!-- 1 -->
-    <article class="seg" data-key="d2-1" data-dep="6:55" style="--l:var(--l-jr)">
-      <div class="seghead"><span class="chip">JR総武線</span><span class="dur">3分</span>
-        <button class="stamp" type="button" aria-pressed="false"></button></div>
-      <ol class="stops">
-        <li class="stop"><time>6:55</time><span class="dot"></span><span class="stn">船橋<em>ハツ</em></span></li>
-        <li class="stop"><time>6:58</time><span class="dot"></span><span class="stn">西船橋<em>チャク</em></span></li>
-      </ol>
-    </article>
-    <div class="gap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 8h13l-3-3M20 16H7l3 3"/></svg>西船橋で乗換 <b>16分</b>　あわてなくて大丈夫</div>
-
-    <!-- 2 -->
-    <article class="seg" data-key="d2-2" data-dep="7:14" style="--l:var(--l-toyo)">
-      <div class="seghead"><span class="chip">東葉高速線</span><span class="dur">21分</span>
-        <button class="stamp" type="button" aria-pressed="false"></button></div>
-      <ol class="stops">
-        <li class="stop"><time>7:14</time><span class="dot"></span><span class="stn">西船橋<em>ハツ</em></span></li>
-        <li class="stop"><time>7:35</time><span class="dot"></span><span class="stn">東葉勝田台<em>チャク</em></span></li>
-      </ol>
-      <p class="note">今日いちばん「乗ったことがない」かもしれない路線。地下から地上へ抜けます。</p>
-    </article>
-    <div class="gap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="4" r="2"/><path d="M11 21l2-6-3-3 1-4 3 3 3 1M10 12l-3 3-2 6"/></svg>徒歩で京成勝田台へ　<b>14分</b>の余裕</div>
-
-    <!-- 3 -->
-    <article class="seg" data-key="d2-3" data-dep="7:49" style="--l:var(--l-kei)">
-      <div class="seghead"><span class="chip">京成本線 快速</span><span class="dur">24分</span>
-        <button class="stamp" type="button" aria-pressed="false"></button></div>
-      <ol class="stops">
-        <li class="stop"><time>7:49</time><span class="dot"></span><span class="stn">勝田台<em>ハツ</em></span></li>
-        <li class="stop"><time>8:13</time><span class="dot"></span><span class="stn">京成成田<em>チャク</em></span></li>
-      </ol>
-    </article>
-    <div class="gap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="4" r="2"/><path d="M11 21l2-6-3-3 1-4 3 3 3 1M10 12l-3 3-2 6"/></svg>徒歩でJR成田へ　<b>27分</b>の余裕</div>
-
-    <!-- 4 -->
-    <article class="seg" data-key="d2-4" data-dep="8:40" style="--l:var(--l-nar)">
-      <div class="seghead"><span class="chip">JR成田線</span><span class="dur">76分</span>
-        <button class="stamp" type="button" aria-pressed="false"></button></div>
-      <ol class="stops">
-        <li class="stop"><time>8:40</time><span class="dot"></span><span class="stn">成田<em>ハツ</em></span></li>
-        <li class="stop"><time>9:56</time><span class="dot"></span><span class="stn">銚子<em>チャク</em></span></li>
-      </ol>
-      <p class="note">利根川ぞいをひたすら東へ。ここでいったん体力を回復しておきます。</p>
-    </article>
-    <div class="gap tight"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M12 22a8 8 0 100-16 8 8 0 000 16zM12 11v4l3 2"/></svg>銚子で乗換 <b>4分</b>　降りたらすぐ銚子電鉄ホームへ！</div>
-
-    <!-- 5 -->
-    <article class="seg hero" data-key="d2-5" data-dep="10:00" style="--l:var(--l-cho)">
-      <span class="badge">本日のメイン</span>
-      <div class="seghead"><span class="chip">銚子電鉄</span><span class="dur">22分</span>
-        <button class="stamp" type="button" aria-pressed="false"></button></div>
-      <ol class="stops">
-        <li class="stop"><time>10:00</time><span class="dot"></span><span class="stn">銚子<em>ハツ</em></span></li>
-        <li class="stop"><time>10:22</time><span class="dot"></span><span class="stn">外川<em>チャク</em></span></li>
-      </ol>
-      <p class="note">攻めた乗換ですが、銚子電鉄の時刻表自体が<b>JR 9:56着 → 10:00発</b>を接続として案内しています。フリーパスなので、きっぷを買う手間もゼロ。</p>
-    </article>
-    <div class="gap stay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M10 21v-6h4v6"/></svg>外川で <b>17分</b>　終着駅と駅前を見学</div>
-
-    <!-- 6 -->
-    <article class="seg" data-key="d2-6" data-dep="10:39" style="--l:var(--l-cho)">
-      <div class="seghead"><span class="chip">銚子電鉄</span><span class="dur">3分</span>
-        <button class="stamp" type="button" aria-pressed="false"></button></div>
-      <ol class="stops">
-        <li class="stop"><time>10:39</time><span class="dot"></span><span class="stn">外川<em>ハツ</em></span></li>
-        <li class="stop"><time>10:42</time><span class="dot"></span><span class="stn">犬吠<em>チャク</em></span></li>
-      </ol>
-    </article>
-    <div class="gap stay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M10 21v-6h4v6"/></svg>犬吠さんぽ <b>65分</b>（10:42〜11:47）　灯台まで足をのばせます</div>
-
-    <!-- 7 -->
-    <article class="seg" data-key="d2-7" data-dep="11:47" style="--l:var(--l-cho)">
-      <div class="seghead"><span class="chip">銚子電鉄</span><span class="dur">16分</span>
-        <button class="stamp" type="button" aria-pressed="false"></button></div>
-      <ol class="stops">
-        <li class="stop"><time>11:47</time><span class="dot"></span><span class="stn">犬吠<em>ハツ</em></span></li>
-        <li class="stop"><time>12:03</time><span class="dot"></span><span class="stn">銚子<em>チャク</em></span></li>
-      </ol>
-    </article>
-    <div class="gap stay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 3v18M5 3h10l-2 5 2 5H5"/></svg>銚子で昼食 <b>約60分</b>（12:03〜13:05）</div>
-
-    <!-- 8 -->
-    <article class="seg" data-key="d2-8" data-dep="13:12" style="--l:var(--l-cho)">
-      <div class="seghead"><span class="chip">銚子電鉄</span><span class="dur">20分</span>
-        <button class="stamp" type="button" aria-pressed="false"></button></div>
-      <ol class="stops">
-        <li class="stop"><time>13:12</time><span class="dot"></span><span class="stn">銚子<em>ハツ</em></span></li>
-        <li class="stop"><time>13:32</time><span class="dot"></span><span class="stn">犬吠<em>チャク</em></span></li>
-      </ol>
-      <p class="note">昼食後、犬吠まで<b>もう一往復</b>。普通の観光旅行なら削るところですが、今回は「電車に乗ることが目的」なので削りません。</p>
-    </article>
-    <div class="gap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 8h13l-3-3M20 16H7l3 3"/></svg>犬吠で折返し <b>12分</b></div>
-
-    <!-- 9 -->
-    <article class="seg" data-key="d2-9" data-dep="13:44" style="--l:var(--l-cho)">
-      <div class="seghead"><span class="chip">銚子電鉄</span><span class="dur">16分</span>
-        <button class="stamp" type="button" aria-pressed="false"></button></div>
-      <ol class="stops">
-        <li class="stop"><time>13:44</time><span class="dot"></span><span class="stn">犬吠<em>ハツ</em></span></li>
-        <li class="stop"><time>14:00</time><span class="dot"></span><span class="stn">銚子<em>チャク</em></span></li>
-      </ol>
-    </article>
-    <div class="gap stay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h12l-1 6H7zM7 8h10v12a2 2 0 01-2 2H9a2 2 0 01-2-2z"/></svg>銚子駅で <b>57分</b>　おみやげ・休憩（〜14:57）</div>
-
-    <!-- 10 -->
-    <article class="seg" data-key="d2-10" data-dep="14:57" style="--l:var(--l-sob)">
-      <div class="seghead"><span class="chip">JR総武本線 普通</span><span class="dur">96分</span>
-        <button class="stamp" type="button" aria-pressed="false"></button></div>
-      <ol class="stops">
-        <li class="stop"><time>14:57</time><span class="dot"></span><span class="stn">銚子<em>ハツ</em></span></li>
-        <li class="stop"><time>16:33</time><span class="dot"></span><span class="stn">千葉<em>チャク</em></span></li>
-      </ol>
-      <p class="via">経由：<span>旭</span><span>八日市場</span><span>成東</span><span>八街</span><span>佐倉</span></p>
-      <p class="note">行きの成田線とは別ルート。これで<b>千葉県東部を線路で一周</b>したことになります。</p>
-    </article>
-    <div class="gap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 8h13l-3-3M20 16H7l3 3"/></svg>千葉で乗換 <b>約10分</b></div>
-
-    <!-- 11 -->
-    <article class="seg" data-key="d2-11" data-dep="16:40" style="--l:var(--l-jr)">
-      <div class="seghead"><span class="chip">JR総武線</span><span class="dur">約20分</span>
-        <button class="stamp" type="button" aria-pressed="false"></button></div>
-      <ol class="stops">
-        <li class="stop"><time>16:40<sub>台</sub></time><span class="dot"></span><span class="stn">千葉<em>ハツ</em></span></li>
-        <li class="stop"><time>17:00<sub>前後</sub></time><span class="dot"></span><span class="stn">船橋<em>チャク</em></span></li>
-      </ol>
-      <p class="note">2日間、完走おつかれさま。</p>
-    </article>
-
-    <div class="art" style="margin-top:16px">
-      <svg viewBox="0 0 400 250" role="img" aria-label="2日目のルート図。船橋から西船橋、東葉勝田台、京成成田、成田、銚子を経て総武本線で千葉に戻る一周ルート">
-        <rect width="400" height="250" fill="#F7F9F3"/>
-        <g fill="none" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M46 60 L92 60" stroke="#0F7FBF"/>
-          <path d="M92 60 L176 42" stroke="#0090B8"/>
-          <path d="M176 42 L268 58" stroke="#1E4E9E"/>
-          <path d="M268 58 L338 96" stroke="#0E8E56"/>
-          <path d="M338 96 L356 132" stroke="#C42F2C"/>
-          <path d="M338 96 L262 168 L150 196" stroke="#B58A00"/>
-          <path d="M150 196 L46 60" stroke="#0F7FBF" stroke-dasharray="2 12"/>
-        </g>
-        <g fill="#F7F9F3" stroke="#15211C" stroke-width="3.5">
-          <circle cx="46" cy="60" r="9"/><circle cx="92" cy="60" r="7"/><circle cx="176" cy="42" r="7"/>
-          <circle cx="268" cy="58" r="7"/><circle cx="338" cy="96" r="9"/><circle cx="356" cy="132" r="7"/>
-          <circle cx="150" cy="196" r="9"/>
-        </g>
-        <g font-family="Zen Maru Gothic, sans-serif" font-size="13" font-weight="700" fill="#15211C">
-          <text x="20" y="84">船橋</text>
-          <text x="76" y="84">西船橋</text>
-          <text x="150" y="30">勝田台</text>
-          <text x="240" y="46">成田</text>
-          <text x="316" y="86">銚子</text>
-          <text x="330" y="154">外川・犬吠</text>
-          <text x="124" y="220">千葉</text>
-        </g>
-        <g font-family="Zen Maru Gothic, sans-serif" font-size="11" font-weight="700">
-          <text x="108" y="36" fill="#0090B8">東葉高速</text>
-          <text x="196" y="66" fill="#1E4E9E">京成本線</text>
-          <text x="286" y="88" fill="#0E8E56">成田線</text>
-          <text x="212" y="196" fill="#8A6800">総武本線</text>
-          <text x="52" y="146" fill="#6B7D72">総武線でスタート地点へ</text>
-        </g>
-      </svg>
-    </div>
-    <p class="cap">行きは県の北側（成田線）、帰りは内側（総武本線）。同じ道を戻らないルート設計です。</p>
-
-    <div class="card kid">
-      <h3>けんちゃんミッション</h3>
-      <p>2日目は<b>6つの鉄道会社・路線</b>を乗り継ぎます。会社がちがうと、電車の音も、シートの手ざわりも、ドアの閉まり方もちがいます。</p>
-      <ol>
-        <li>路線ごとに「音」をひとつ覚える（発車メロディ・モーター・アナウンス）</li>
-        <li>いちばん速い電車と、いちばんゆっくりな電車はどれだった？</li>
-        <li>銚子駅で、JRのホームと銚子電鉄のホームのちがいをさがす</li>
-      </ol>
+    <div class="card alert">
+      <h3>🔎 出発の3日前にやること</h3>
+      <p>この旅でいちばん大きな変数は<strong>小湊鉄道の復旧状況</strong>です。下の3つを、出発前にまとめて確認してください。</p>
+      <ul class="checklist">
+        <li><span class="dot">□</span><span><strong>小湊鉄道</strong>：五井〜上総中野が終日 列車運転になっているか（代行バスのままだと1日目が変わります）</span></li>
+        <li><span class="dot">□</span><span><strong>房総里山トロッコ</strong>：選んだ日が運転日か／指定席は取れたか</span></li>
+        <li><span class="dot">□</span><span><strong>銚子電鉄</strong>：通常どおり運行しているか（9月1日時点では通常運行）</span></li>
+      </ul>
     </div>
 
     <div class="card">
-      <h3>2日目の注意ポイント</h3>
-      <ul class="checks">
-        <li><b>銚子 9:56着 → 10:00発の乗換4分</b>がこの日の山場。成田線の車内で、降りる準備を先に済ませておく。</li>
-        <li>勝田台と成田は<b>徒歩での乗換</b>。それぞれ14分・27分の余裕があるので、トイレ休憩はここで。</li>
-        <li>犬吠での散策は65分。灯台まで行くなら、時間配分に注意。</li>
+      <h3>🎒 持ちもの</h3>
+      <ul class="checklist">
+        <li><span class="dot">✓</span><span>フリーパス／トロッコ指定席券</span></li>
+        <li><span class="dot">✓</span><span>モバイルバッテリー（このページを見ながらなので）</span></li>
+        <li><span class="dot">✓</span><span>帽子・飲みもの（トロッコは窓がありません）</span></li>
+        <li><span class="dot">✓</span><span>雨具（トロッコもホームも屋根がすくない）</span></li>
+        <li><span class="dot">✓</span><span>カメラ／小銭（無人駅・売店用）</span></li>
+        <li><span class="dot">✓</span><span>おやつ（五井の56分と、養老渓谷の94分がひま対策）</span></li>
       </ul>
+    </div>
+
+    <div class="card">
+      <h3>🚉 この2日で乗る路線</h3>
+      <ul class="checklist">
+        <li><span class="dot" style="background:var(--l-jr);color:#fff">JR</span><span>総武快速線・内房線・成田線・総武本線</span></li>
+        <li><span class="dot" style="background:var(--l-kominato);color:#fff">小</span><span>小湊鉄道（ふつうの列車）</span></li>
+        <li><span class="dot" style="background:var(--red);color:#fff">ト</span><span>房総里山トロッコ</span></li>
+        <li><span class="dot" style="background:var(--l-toyo);color:#fff">東</span><span>東葉高速鉄道</span></li>
+        <li><span class="dot" style="background:var(--l-keisei);color:#fff">京</span><span>京成本線（快速・追加料金なし）</span></li>
+        <li><span class="dot" style="background:var(--l-choshi);color:#fff">銚</span><span>銚子電鉄</span></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>💡 2日間の考えかた</h3>
+      <p><strong>1日目</strong>は、同じ小湊鉄道を「ふつうの列車 → トロッコ → ふつうの列車」と乗りくらべる日。<br><strong>2日目</strong>は、ちがう会社の路線をつないで千葉を大きく回る日。<br>この対比が、この旅のいちばんおもしろいところです。どちらも帰着は<strong>16:48</strong>と<strong>16:58</strong>。夕方にはちゃんと帰ってこられます。</p>
+    </div>
+
+    <div style="text-align:center">
+      <button class="reset" id="resetBtn">チェックをぜんぶ消す</button>
     </div>
   </section>
 
-  <div class="card">
-    <h3>フリーパスのこと</h3>
-    <p>この2日間の行程は、原則すべて<b>サンキューちばフリーパス</b>の範囲内で完結します。乗るたびにきっぷを買う必要がないので、4分乗換のような場面でも慌てずに済みます。</p>
-    <p>ただし<b>房総里山トロッコの指定席券800円</b>は別料金。事前に確保しておいてください。</p>
-  </div>
-
-  <p class="foot">
-    ※時刻は計画時点のものです。<br>
-    小湊鉄道は復旧途中のため、出発前に最新の運転情報をご確認ください。
+  <p class="footer">
+    時刻は土休日ダイヤ。出発前に最新の運行状況をご確認ください。<br>
+    <span id="clock" class="num"></span>
   </p>
-</div>
+</main>
 
 <script>
 (function(){
+  "use strict";
+
+  /* ---------- ride / stay row content ---------- */
+  var ROWS = {
+    "d1-1":{ic:"train",ln:"JR総武快速・内房線",sub:"船橋 → 五井　37分"},
+    "d1-2":{ic:"train",ln:"小湊鉄道",sub:"五井 8:23発 → 上総牛久　27分"},
+    "d1-3":{ic:"train",ln:"小湊鉄道",sub:"上総牛久 → 五井　27分"},
+    "d1-4":{ic:"star", ln:"房総里山トロッコ 1号",sub:"五井 → 養老渓谷　2時間10分／指定席券800円"},
+    "d1-5":{ic:"train",ln:"小湊鉄道 普通",sub:"養老渓谷 → 五井　1時間20分"},
+    "d1-6":{ic:"train",ln:"JR快速",sub:"五井 16:07発 → 船橋　41分"},
+    "d1-s1":{ic:"look",ln:"上総牛久で 25分",sub:"駅を見て、折り返しを待つ"},
+    "d1-s2":{ic:"look",ln:"五井で 56分",sub:"トロッコの入線・車庫の車両を見る時間"},
+    "d1-s3":{ic:"food",ln:"養老渓谷で 94分",sub:"おひるごはん＋駅のまわりを散策"},
+    "d2-1":{ic:"train",ln:"東葉高速鉄道",sub:"東海神 → 東葉勝田台　18分"},
+    "d2-2":{ic:"train",ln:"京成本線 快速",sub:"勝田台 → 京成成田　24分／料金いらず"},
+    "d2-3":{ic:"train",ln:"JR成田線 普通",sub:"成田 → 銚子　1時間16分"},
+    "d2-4":{ic:"train",ln:"銚子電鉄",sub:"銚子 → 外川　22分"},
+    "d2-5":{ic:"train",ln:"銚子電鉄",sub:"外川 → 犬吠　3分"},
+    "d2-6":{ic:"train",ln:"銚子電鉄",sub:"犬吠 → 銚子　16分"},
+    "d2-7":{ic:"train",ln:"銚子電鉄",sub:"銚子 → 外川　22分"},
+    "d2-8":{ic:"train",ln:"銚子電鉄",sub:"外川 13:41発 → 銚子　19分"},
+    "d2-9":{ic:"train",ln:"JR総武本線 普通",sub:"銚子 → 千葉　1時間36分"},
+    "d2-10":{ic:"train",ln:"JR総武快速",sub:"千葉 16:44発 → 船橋　14分"},
+    "d2-w1":{ic:"walk",ln:"あるいて乗りかえ",sub:"東葉勝田台 → 京成 勝田台駅（14分あります）"},
+    "d2-w2":{ic:"walk",ln:"あるいて乗りかえ",sub:"京成成田 → JR成田駅（27分あるので余裕）"},
+    "d2-s1":{ic:"look",ln:"外川で 17分",sub:"レトロな終着駅をたっぷり見る"},
+    "d2-s2":{ic:"look",ln:"犬吠で 65分",sub:"犬吠埼灯台まで歩いて、海を見る"},
+    "d2-s3":{ic:"food",ln:"銚子で 69分",sub:"おひるごはん"},
+    "d2-s4":{ic:"look",ln:"銚子で 57分",sub:"駅・おみやげ・休憩"}
+  };
+
+  var ICONS = {
+    train:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="13" rx="3"/><path d="M5 9h14"/><path d="M8 20l-2 2M16 20l2 2"/><circle cx="9" cy="13" r=".6" fill="currentColor"/><circle cx="15" cy="13" r=".6" fill="currentColor"/></svg>',
+    walk:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="4" r="1.8"/><path d="M11 21l2-6-3-3 1-4 3 3 2 1"/><path d="M10 12l-3 4"/></svg>',
+    food:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v8M9 3v8M7.5 11v10"/><path d="M17 3c-1.5 2-2 4-2 6s.7 2 2 2 2 0 2-2-.5-4-2-6z"/><path d="M17 11v10"/></svg>',
+    look:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/></svg>',
+    star:'<svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5L2.6 9.4l6.5-.9z"/></svg>'
+  };
+  var CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.5 5.5L20 6.5"/></svg>';
+
+  /* ---------- storage ---------- */
   var KEY = "kenchan-chiba-rail-v1";
-  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var state = {};
-  try { state = JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { state = {}; }
-  function save(){ try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
-
-  var segs = Array.prototype.slice.call(document.querySelectorAll(".seg"));
-  var pn = document.getElementById("pn");
-  var pt = document.getElementById("pt");
-  var pfill = document.getElementById("pfill");
-  pt.textContent = segs.length;
-
-  function render(){
-    var done = 0;
-    segs.forEach(function(seg){
-      var on = !!state[seg.dataset.key];
-      seg.classList.toggle("done", on);
-      seg.querySelector(".stamp").setAttribute("aria-pressed", String(on));
-      if (on) done++;
-    });
-    pn.textContent = done;
-    pfill.style.width = (segs.length ? (done / segs.length * 100) : 0) + "%";
+  function load(){
+    try{ return JSON.parse(localStorage.getItem(KEY)) || {}; }catch(e){ return {}; }
   }
+  function save(s){
+    try{ localStorage.setItem(KEY, JSON.stringify(s)); }catch(e){}
+  }
+  var state = load();
+  if(!state.done) state.done = {};
 
-  segs.forEach(function(seg){
-    seg.querySelector(".stamp").addEventListener("click", function(){
-      var k = seg.dataset.key;
-      if (state[k]) { delete state[k]; } else { state[k] = 1; }
-      save(); render();
+  /* ---------- build rows ---------- */
+  document.querySelectorAll(".ride, .stay").forEach(function(li){
+    var id = li.getAttribute("data-id");
+    var d = ROWS[id];
+    if(!d) return;
+    var b = document.createElement("button");
+    b.className = "rowbtn";
+    b.type = "button";
+    b.setAttribute("aria-pressed", state.done[id] ? "true" : "false");
+    b.innerHTML =
+      '<span class="ic">' + ICONS[d.ic] + '</span>' +
+      '<span class="mid"><span class="ln">' + d.ln + '</span><span class="sub">' + d.sub + '</span></span>' +
+      '<span class="box">' + CHECK + '</span>';
+    b.addEventListener("click", function(){
+      var on = b.getAttribute("aria-pressed") === "true";
+      b.setAttribute("aria-pressed", on ? "false" : "true");
+      if(on){ delete state.done[id]; } else { state.done[id] = 1; }
+      save(state);
     });
+    li.appendChild(b);
   });
 
-  document.getElementById("reset").addEventListener("click", function(){
-    state = {}; save(); render();
-  });
-  render();
-
-  /* tabs */
+  /* ---------- tabs ---------- */
   var tabs = Array.prototype.slice.call(document.querySelectorAll(".tab"));
-  tabs.forEach(function(tab){
-    tab.addEventListener("click", function(){
-      tabs.forEach(function(t){
-        var sel = t === tab;
-        t.setAttribute("aria-selected", String(sel));
-        document.getElementById(t.getAttribute("aria-controls")).hidden = !sel;
-      });
-      window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+  function selectTab(tab){
+    tabs.forEach(function(t){
+      var on = t === tab;
+      t.setAttribute("aria-selected", on ? "true" : "false");
+      document.getElementById(t.getAttribute("aria-controls")).hidden = !on;
     });
-  });
-
-  /* clock */
-  var clock = document.getElementById("clock");
-  function tick(){
-    var d = new Date();
-    clock.textContent = d.getHours() + ":" + String(d.getMinutes()).padStart(2, "0");
+    markNext();
+    window.scrollTo({top:0, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"});
   }
-  tick(); setInterval(tick, 20000);
+  tabs.forEach(function(t){ t.addEventListener("click", function(){ selectTab(t); }); });
 
-  /* jump to the next departure of the visible day */
-  document.getElementById("jump").addEventListener("click", function(){
-    var day = document.querySelector(".day:not([hidden])");
-    if (!day) return;
-    var list = Array.prototype.slice.call(day.querySelectorAll(".seg"));
-    var d = new Date();
-    var now = d.getHours() * 60 + d.getMinutes();
-    var target = null;
-    for (var i = 0; i < list.length; i++){
-      var p = list[i].dataset.dep.split(":");
-      if (parseInt(p[0], 10) * 60 + parseInt(p[1], 10) >= now) { target = list[i]; break; }
+  /* ---------- dates ---------- */
+  var chips = Array.prototype.slice.call(document.querySelectorAll("#dateChips .chip"));
+  var dateEls = document.querySelectorAll(".date[data-day]");
+  function applyDates(chip){
+    chips.forEach(function(c){ c.setAttribute("aria-pressed", c === chip ? "true" : "false"); });
+    var d1 = chip.getAttribute("data-d1"), d2 = chip.getAttribute("data-d2");
+    dateEls.forEach(function(el){
+      var v = el.getAttribute("data-day") === "1" ? d1 : d2;
+      el.textContent = v ? v : "日にちはこれから決めます";
+    });
+    state.date = chip.getAttribute("data-key");
+    save(state);
+  }
+  chips.forEach(function(c){ c.addEventListener("click", function(){ applyDates(c); }); });
+  var saved = chips.filter(function(c){ return c.getAttribute("data-key") === state.date; })[0];
+  applyDates(saved || chips[chips.length - 1]);
+
+  /* ---------- "next stop" marker by clock ---------- */
+  function toMin(txt){
+    var m = /(\d{1,2}):(\d{2})/.exec(txt);
+    return m ? parseInt(m[1],10) * 60 + parseInt(m[2],10) : null;
+  }
+  function markNext(){
+    document.querySelectorAll(".stop.is-next").forEach(function(el){
+      el.classList.remove("is-next");
+      var f = el.querySelector(".nowflag");
+      if(f) f.remove();
+    });
+    var panel = document.querySelector('[role="tabpanel"]:not([hidden])');
+    if(!panel) return;
+    var now = new Date();
+    var mins = now.getHours() * 60 + now.getMinutes();
+    if(mins < 330 || mins > 1080) return;   /* 5:30〜18:00 のあいだだけ表示 */
+    var stops = Array.prototype.slice.call(panel.querySelectorAll(".stop"));
+    for(var i = 0; i < stops.length; i++){
+      var t = toMin(stops[i].textContent);
+      if(t !== null && t >= mins){
+        stops[i].classList.add("is-next");
+        var flag = document.createElement("span");
+        flag.className = "nowflag";
+        flag.textContent = "つぎ";
+        stops[i].appendChild(flag);
+        break;
+      }
     }
-    if (!target) target = list[list.length - 1];
-    target.scrollIntoView({ block: "center", behavior: reduce ? "auto" : "smooth" });
-    target.classList.remove("flash");
-    void target.offsetWidth;
-    target.classList.add("flash");
-    setTimeout(function(){ target.classList.remove("flash"); }, 1600);
+  }
+  function tick(){
+    var n = new Date();
+    var c = document.getElementById("clock");
+    if(c) c.textContent = "いま " + n.getHours() + ":" + ("0" + n.getMinutes()).slice(-2);
+    markNext();
+  }
+  tick();
+  setInterval(tick, 30000);
+
+  /* ---------- 旅の途中に開いたら「つぎ」までスクロール ---------- */
+  setTimeout(function(){
+    var el = document.querySelector(".stop.is-next");
+    if(!el) return;
+    var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var y = el.getBoundingClientRect().top + window.scrollY - 110;
+    if(y < 40) return;
+    window.scrollTo({top:y, behavior: reduce ? "auto" : "smooth"});
+  }, 400);
+
+  /* ---------- reset ---------- */
+  var rb = document.getElementById("resetBtn");
+  if(rb) rb.addEventListener("click", function(){
+    state.done = {};
+    save(state);
+    document.querySelectorAll(".rowbtn").forEach(function(b){ b.setAttribute("aria-pressed","false"); });
+    rb.textContent = "消しました！";
+    setTimeout(function(){ rb.textContent = "チェックをぜんぶ消す"; }, 1600);
   });
 })();
 </script>
